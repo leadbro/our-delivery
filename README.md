@@ -1,6 +1,6 @@
 # our-delivery
 
-> Nuxt.js project
+> Сайт компании «Наша доставка»
 
 ## Build Setup
 
