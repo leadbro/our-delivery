@@ -3,6 +3,7 @@
       class="base-title"
   >
     <img
+        v-if="imageSrc"
         :src="imageSrc"
         class="base-title__icon"
     />

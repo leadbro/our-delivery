@@ -2,7 +2,7 @@
   <div id="app">
     <app-header/>
     <nuxt/>
-    <!--<app-footer/>-->
+    <app-footer/>
   </div>
 </template>
 
@@ -38,7 +38,6 @@
   body {
     font-family: $openSans;
     font-size: 1.6rem;
-    padding-bottom: 1000px;
     width: 100%;
   }
 
