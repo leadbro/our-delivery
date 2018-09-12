@@ -90,8 +90,8 @@
         border-left: none;
 
         position: absolute;
-        top: calc(50% - .6rem);
-        left: calc(50% - .3rem);
+        top: calc(50% - .5rem);
+        left: calc(50% - .2rem);
 
         width: 0.5rem;
         height: 0.8rem;

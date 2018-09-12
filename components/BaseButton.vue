@@ -52,7 +52,7 @@
 
       transform: scale(.95, .85);
 
-      transition: transform .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      transition: transform .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 
     &:hover,

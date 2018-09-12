@@ -134,6 +134,7 @@
         font-size: 6rem;
         line-height: 7.5rem;
         text-transform: uppercase;
+        margin: 0;
       }
 
       h3 {
@@ -141,12 +142,14 @@
         font-size: 3rem;
         line-height: 6rem;
         text-transform: uppercase;
+        margin: 0;
       }
 
       p {
         font-family: $PTSans;
         font-size: 1.6rem;
         line-height: 2.6rem;
+        margin: 0;
       }
     }
 

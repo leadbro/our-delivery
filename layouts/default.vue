@@ -28,7 +28,6 @@
   *:before,
   *:after {
     box-sizing: border-box;
-    margin: 0;
   }
 
   html {
@@ -39,6 +38,7 @@
   body {
     font-family: $openSans;
     font-size: 1.6rem;
+    padding-bottom: 1000px;
     width: 100%;
   }
 
@@ -47,7 +47,7 @@
   #__nuxt,
   #__layout,
   #app {
-    height: 100%;
+    min-height: 100%;
   }
 
   picture {
