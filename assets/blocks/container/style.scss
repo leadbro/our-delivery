@@ -1,0 +1,14 @@
+@import '../../mixins';
+
+.container {
+  margin: 0 auto;
+  width: calc(100vw - 3rem);
+
+  @media #{$min768} {
+    max-width: 76.8rem;
+  }
+
+  @media #{$min1024} {
+    max-width: 130rem;
+  }
+}

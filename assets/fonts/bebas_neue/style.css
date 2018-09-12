@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'BebasNeueBold';
+  src: url('BebasNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BebasNeueLight';
+  src: url('BebasNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('BebasNeueRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}

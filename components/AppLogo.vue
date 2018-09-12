@@ -8,6 +8,27 @@
 </template>
 
 <style lang="scss">
+  @import "../assets/mixins.scss";
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 4rem;
+    line-height: 4.024rem;
+
+    &__icon {
+      height: 10.1rem;
+      width: 8.9rem;
+    }
+
+    &__text {
+      font-family: $pobedaBold;
+      text-transform: uppercase;
+      padding: 0 1.7rem;
+      width: 12.8rem;
+    }
+  }
 
 </style>
 

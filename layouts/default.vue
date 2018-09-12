@@ -1,11 +1,68 @@
 <template>
   <div id="app">
+    <app-header/>
     <nuxt/>
-    <app-footer/>
+    <!--<app-footer/>-->
   </div>
 </template>
 
-<style>
+<script>
+  import "normalize.css";
+  import "~/assets/blocks";
 
+  import AppHeader from "~/components/AppHeader"
+  import AppFooter from "~/components/AppFooter"
+
+  export default {
+    components: {
+      AppHeader,
+      AppFooter
+    }
+  }
+</script>
+
+<style lang="scss">
+  @import "../assets/mixins.scss";
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    font-size: 10px;
+    position: relative;
+  }
+
+  body {
+    font-family: $openSans;
+    font-size: 1.6rem;
+    width: 100%;
+  }
+
+  html,
+  body,
+  #__nuxt,
+  #__layout,
+  #app {
+    height: 100%;
+  }
+
+  picture {
+    display: block;
+
+    img {
+      display: block;
+    }
+  }
+
+  a {
+
+    &:focus {
+      outline-color: #0000ff;
+    }
+  }
 </style>
 

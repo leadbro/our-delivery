@@ -3,16 +3,31 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'our-delivery',
+    title: 'Наша доставка',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|PT+Sans:400,700&subset=cyrillic-ext"
+      },
     ]
   },
+  css: [
+    '~/assets/fonts/bebas_neue/style.css',
+    '~/assets/fonts/pobeda/WEB/Pobeda-Regular/styles.css',
+    '~/assets/fonts/pobeda/WEB/Pobeda-Bold/styles.css',
+    '~/assets/fonts/GothamPro/style.css'
+  ],
+  plugins: [
+    { src: '~/plugins/base-components'},
+    { src: '~/plugins/vue-awesome-swiper', ssr: false }
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -34,6 +49,6 @@ module.exports = {
         })
       }
     }
-  }
+  },
 }
 

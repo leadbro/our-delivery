@@ -4,7 +4,7 @@
       <app-logo class="footer__logo"/>
       <nav class="footer__menu">
         <ul class="footer__menu-list">
-          <li class="footer__menu-item" v-for="item in _items">
+          <li class="footer__menu-item" v-for="item in _items" :key="item.id">
             <nuxt-link class="footer__menu-link"></nuxt-link>
           </li>
         </ul>
