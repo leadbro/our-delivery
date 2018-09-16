@@ -24,8 +24,8 @@
     justify-content: center;
 
     cursor: pointer;
-
-    border: none;
+    
+    border: 0.2rem solid #0000ff;
     background-color: #fff;
     color: #181818;
     font-family: $bebasNeueBold;
@@ -37,30 +37,14 @@
     height: 7.6rem;
 
     position: relative;
-
-    &:after {
-      content: '';
-      display: block;
-
-      border: 0.2rem solid #0000ff;
-
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-
-      transform: scale(.95, .85);
-
-      transition: transform .2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    }
+    
+    transition: color .2s, background-color .1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &:hover,
     &:focus {
 
-      &:after {
-        transform: scale(1);
-      }
+      background-color: #0000ff;
+      color: #fff;
     }
   }
 </style>

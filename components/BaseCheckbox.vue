@@ -60,6 +60,8 @@
     cursor: pointer;
 
     &__input {
+      opacity: 0;
+
       width: 0;
       height: 0;
 
