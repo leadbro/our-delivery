@@ -91,6 +91,8 @@
         }
       },
     },
+    created() {
+    },
     props: {
       r: {
         type: Number,

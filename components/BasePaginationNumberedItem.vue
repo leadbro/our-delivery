@@ -45,7 +45,11 @@ export default {
   },
   methods: {
     init() {
-      this.size = parseFloat(getComputedStyle(this.$el).getPropertyValue('--pagination-item-size'))
+      this.size = parseFloat(getComputedStyle(this.$el).getPropertyValue('--pagination-item-size'));
+
+      if (this.isCurrent) {
+        this.start();
+      }
     },
     start() {
       this.$refs.progress.start();
