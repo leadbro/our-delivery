@@ -13,20 +13,26 @@
   import { mapGetters } from 'vuex';
 
 export default {
+  layout: 'dev',
   data() {
     return {
       currentItemId: 0
     }
-  },
-  components: {
-
   },
   computed: {
     ...mapGetters({
       _items: 'services/items',
       getItemById: 'services/getItemById',
     }),
-  }
+  },
+  methods: {
+    onPaginationClick(id) {
+      this.currentItemId = id;
+    }
+  },
+  components: {
+
+  },
 }
 </script>
 

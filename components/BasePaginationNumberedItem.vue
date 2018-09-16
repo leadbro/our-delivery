@@ -5,11 +5,16 @@
   >
     <slot></slot>
 
-
+    <base-pagination-numbered-item-progress
+        class="base-pagination-numbered-item__progress"
+        :r="19"
+    />
   </li>
 </template>
 
 <script>
+  import BasePaginationNumberedItemProgress from '~/components/BasePaginationNumberedItemProgress'
+
 export default {
   name: "BasePaginationNumberedItem",
   data() {
@@ -20,12 +25,7 @@ export default {
     };
   },
   computed: {
-    circum() {
-      return Math.PI * 2
-    },
-    start() {
-      return Math.PI / -2
-    },
+
     duration() {
       return this.speed
     }
@@ -47,6 +47,9 @@ export default {
       type: Number,
       default: 6000
     }
+  },
+  components: {
+    BasePaginationNumberedItemProgress
   }
 };
 </script>
@@ -64,8 +67,7 @@ export default {
   cursor: pointer;
 
   background-color: rgba(210, 210, 210, 0.4);
-  background-clip: padding-box;
-  border: 6px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(210, 210, 210, 0.4);
   border-radius: 50%;
 
   font-family: $pobedaBold;
@@ -81,7 +83,6 @@ export default {
   transition-duration: 0.6s;
 
   &--current {
-    border: 1px solid rgba(210, 210, 210, 0.4);
 
     background-color: #fff;
     color: $color-red-2;
@@ -89,7 +90,7 @@ export default {
     font-weight: 600;
   }
 
-  &__canvas {
+  &__progress {
     position: absolute;
     top: 0;
     right: 0;
