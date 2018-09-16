@@ -1,13 +1,18 @@
 <template>
   <li
       class="base-pagination-numbered-item"
+      ref="item"
       :class="{'base-pagination-numbered-item--current' : isCurrent }"
   >
-    <slot></slot>
+    <div class="base-pagination-numbered-item__name">
+      <slot></slot>
+    </div>
 
     <base-pagination-numbered-item-progress
         class="base-pagination-numbered-item__progress"
-        :r="19"
+        :r="progressRadius"
+        ref="progress"
+        :speed="speed"
     />
   </li>
 </template>
@@ -22,21 +27,32 @@ export default {
       currentPercent: 0,
       startTime: 0,
       animationId: 0,
+      size: 19
     };
   },
   computed: {
-
+    progressRadius() {
+      return (this.size)/2 * 10;
+    },
     duration() {
       return this.speed
-    }
+    },
   },
   watch: {
     isCurrent(value) {
-
+      value ? this.start() : this.stop()
     }
   },
   methods: {
-
+    init() {
+      this.size = parseFloat(getComputedStyle(this.$el).getPropertyValue('--pagination-item-size'))
+    },
+    start() {
+      this.$refs.progress.start();
+    },
+    stop() {
+      this.$refs.progress.stop();
+    }
   },
   props: {
     isCurrent: {
@@ -46,7 +62,11 @@ export default {
     speed: {
       type: Number,
       default: 6000
-    }
+    },
+
+  },
+  mounted() {
+    this.init()
   },
   components: {
     BasePaginationNumberedItemProgress
@@ -58,7 +78,7 @@ export default {
 @import "../assets/mixins.scss";
 
 .base-pagination-numbered-item {
-  --size: 3.8rem;
+  --pagination-item-size: 3.8rem;
 
   display: flex;
   align-items: center;
@@ -66,37 +86,38 @@ export default {
 
   cursor: pointer;
 
-  background-color: rgba(210, 210, 210, 0.4);
-  border: 1px solid rgba(210, 210, 210, 0.4);
   border-radius: 50%;
+  color: #fff;
 
-  font-family: $pobedaBold;
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-family: $montserrat;
+  font-weight: 500;
+  font-size: 1.8rem;
 
-  width: var(--size);
-  height: var(--size);
+  width: var(--pagination-item-size);
+  height: var(--pagination-item-size);
 
   position: relative;
 
-  transition-property: border-color, background-color;
-  transition-duration: 0.6s;
-
-  &--current {
-
-    background-color: #fff;
-    color: $color-red-2;
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
   &__progress {
     position: absolute;
-    top: 0;
+    top: -1px;
     right: 0;
     bottom: 0;
     left: 0;
-    //z-index: -1;
+    z-index: 1;
+  }
+
+  &__name {
+    font-size: inherit;
+    position: relative;
+    z-index: 2;
+
+    transform: scale(.8);
+    transition: transform .3s;
+  }
+
+  &--current &__name {
+    transform: scale(1);
   }
 }
 </style>

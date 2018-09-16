@@ -14,7 +14,7 @@ module.exports = {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|PT+Sans:400,700&subset=cyrillic-ext"
+          "https://fonts.googleapis.com/css?family=Montserrat:500,600|Open+Sans:400,700&subset=cyrillic-ext"
       },
     ]
   },

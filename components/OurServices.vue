@@ -9,6 +9,7 @@
         class="our-services__layer-top"
         :items="_items"
         v-if="_item"
+        :speed="speed"
         :current-item-id="currentItemId"
         @set-index="onSetIndex"
     />

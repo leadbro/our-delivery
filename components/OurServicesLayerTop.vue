@@ -12,6 +12,7 @@
             class="our-services-layer-top__pagination"
             :current-id="currentItemId"
             :count="_items.length"
+            :speed="speed"
             @set-index="onPaginationClick"
         />
       </div>
@@ -55,6 +56,10 @@
       currentItemId: {
         type: Number,
         default: 0
+      },
+      speed: {
+        type: Number,
+        default: 5000
       }
     }
   }
