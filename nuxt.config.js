@@ -28,6 +28,9 @@ module.exports = {
     { src: '~/plugins/base-components'},
     { src: '~/plugins/vue-awesome-swiper', ssr: false }
   ],
+  modules: [
+    '@nuxtjs/axios',
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -50,6 +53,9 @@ module.exports = {
       }
     }
   },
-  mode: 'spa'
+  mode: 'spa',
+  axios: {
+    baseURL: 'http://api.xn--80aaaajk8bsm4al1e.xn--p1ai/wp-json/wp/v2/'
+  }
 }
 

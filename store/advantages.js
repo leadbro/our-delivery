@@ -1,40 +1,31 @@
 export const state = () => ({
-  list: [
-    {
-      id: 0,
-      title: 'Привлекательные тарифы',
-      text: 'наши тарифы ниже, чем у крупных федеральных компаний',
-      icon: '/images/icons/advantages/1.svg'
-    },
-    {
-      id: 1,
-      title: 'Гарантия сохранности',
-      text: 'под Ваш груз выделяется отдельное место в машине, поверх которого другой груз не размещается',
-      icon: '/images/icons/advantages/2.svg'
-    },
-    {
-      id: 2,
-      title: 'Скорость доставки',
-      text: 'машина уходит в рейс в день забора груза, доставка  напрямую до дверей клиента, исключая перегрузы на складах в регионах',
-      icon: '/images/icons/advantages/3.png'
-    },
-    {
-      id: 3,
-      title: 'Приветливые и грамотные менеджеры',
-      text: 'наши сотрудники всегда готовы ответить на интересуюзие вас вопросы по доставке груза',
-      icon: '/images/icons/advantages/4.svg'
-    },
-    {
-      id: 4,
-      title: 'страхование груза в надежной компании',
-      text: 'грузы страхуются, по желанию клиента, в ОАО СГ «Спасские ворота»',
-      icon: '/images/icons/advantages/5.svg'
-    },
-  ]
+  list: []
 });
+
 
 export const getters = {
   items(state) {
     return state.list
+  }
+};
+
+export const mutations = {
+  setList(state, payload) {
+    state.list = payload.map(i => {
+      return {
+        id: i.id,
+        title: i.title.rendered,
+        text: i.content.rendered,
+        icon: i.acf.icon.url
+      }
+    })
+  }
+};
+
+export const actions = {
+  async GET_ITEMS({ state, commit }) {
+    let response = await this.$axios.$get('/posts/', {params: {categories: 4}});
+
+    commit('setList', response);
   }
 };

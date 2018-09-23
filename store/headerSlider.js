@@ -1,28 +1,33 @@
 export const state = () => ({
-  list: [
-    {
-      id: 0,
-      title: 'Компания «Наша Доставка» принимает грузы на ответственное хранение',
-      subtitle: 'Стоимость услуги 1м3 — 25 руб. в сутки.',
-      text: 'Наш адрес: Московская область, г. Щелково Фряновское шоссе 52.',
-      picture: {
-        mobile: '/images/slider/1.png'
-      }
-    },
-    {
-      id: 1,
-      title: 'Перевозки по России быстро и надежно',
-      subtitle: 'Стоимость услуги 1м3 — 25 руб. в сутки.',
-      text: 'Наш адрес: Московская область, г. Щелково Фряновское шоссе 52.',
-      picture: {
-        mobile: '/images/slider/2.png'
-      }
-    }
-  ]
+  list: []
 });
 
 export const getters = {
   items(state) {
     return state.list
+  }
+};
+
+export const mutations = {
+  setList(state, payload) {
+
+    state.list = payload.map(i => {
+      return {
+        id: i.id,
+        title: i.acf.title,
+        subtitle: i.acf.subtitle,
+        text: i.acf.text,
+        pictures: {
+          mobile: i.acf.pictures.mobile.url
+        }
+      }
+    })
+  }
+};
+
+export const actions = {
+  async GET_ITEMS({ state, commit }) {
+    let response = await this.$axios.$get('/posts/', {params: {categories: 2}});
+    commit('setList', response);
   }
 };

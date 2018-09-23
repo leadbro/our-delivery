@@ -7,7 +7,7 @@
     </i>
     <div class="our-advantages-item__content">
       <h3 class="our-advantages-item__title">{{_item.title}}</h3>
-      <div class="our-advantages-item__text">{{_item.text}}</div>
+      <div class="our-advantages-item__text" v-html="_item.text"></div>
     </div>
   </li>
 </template>

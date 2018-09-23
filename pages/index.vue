@@ -16,6 +16,10 @@ export default {
     AboutUs,
     OurAdvantages,
     OurServices
+  },
+  async fetch({store}) {
+    await store.dispatch('headerSlider/GET_ITEMS');
+    await store.dispatch('advantages/GET_ITEMS');
   }
 }
 </script>

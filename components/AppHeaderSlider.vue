@@ -14,7 +14,7 @@
         <slot :item="item">
           <picture class="header-slider__picture">
             <img
-                :src="item.picture.mobile"
+                :src="item.pictures.mobile"
                 :alt="item.title"
             />
           </picture>
