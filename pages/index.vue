@@ -2,11 +2,12 @@
   <div class="page-index">
     <app-header-slider class="page-index__slider"/>
 
-    <app-header-form
-      class="page-index__form"
-    />
+    <main-form class="page-index__form"/>
+
     <our-advantages class="page-index__advantages"/>
+
     <about-us class="page-index__about-us"/>
+
     <our-services class="page-index__our-service"/>
   </div>
 </template>
@@ -15,14 +16,14 @@
   import AboutUs from '~/components/AboutUs';
   import OurAdvantages from '~/components/OurAdvantages';
   import OurServices from '~/components/OurServices';
-  import AppHeaderForm from '~/components/AppHeaderForm';
+  import MainForm from '~/components/MainForm';
   import AppHeaderSlider from '~/components/AppHeaderSlider';
 
   export default {
     transition: 'fade',
     components: {
       AboutUs,
-      AppHeaderForm,
+      MainForm,
       AppHeaderSlider,
       OurAdvantages,
       OurServices

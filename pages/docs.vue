@@ -42,6 +42,7 @@ export default {
 
   .page-docs {
     padding-top: 12rem;
+    padding-bottom: 8rem;
 
     &__advantages {
       margin-bottom: 10rem;

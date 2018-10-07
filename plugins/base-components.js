@@ -8,6 +8,7 @@ import BaseCheckbox from "../components/BaseCheckbox";
 import BaseTitle from "../components/BaseTitle";
 import BaseTitleSmall from "../components/BaseTitleSmall";
 import BasePaginationNumbered from "../components/BasePaginationNumbered";
+import FormOrder from "../components/FormOrder";
 
 const components = {
   AppBanner,
@@ -17,7 +18,8 @@ const components = {
   BaseInput,
   BaseTitle,
   BaseTitleSmall,
-  BasePaginationNumbered
+  BasePaginationNumbered,
+  FormOrder
 };
 
 Object.keys(components).forEach(key => {
