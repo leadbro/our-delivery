@@ -33,7 +33,9 @@
       baseInputClass() {
         return {
           'base-input--not-empty': !this.isEmpty,
-          'base-input--required': this.isRequired
+          'base-input--required': this.isRequired,
+          'base-input--white': this.colorScheme === 'white',
+          'base-input--blue': this.colorScheme === 'blue',
         }
       },
       listeners() {
@@ -49,6 +51,12 @@
       value: {
         type: String,
         default: ''
+      },
+      colorScheme: {
+        type: String,
+        default() {
+          return 'blue'
+        }
       }
     }
   };
@@ -58,11 +66,28 @@
   @import "../assets/mixins.scss";
 
   .base-input {
+
+    &--blue {
+      --border-color: #0000ff;
+      --bg-color: #fff;
+      --bg-color-hover: #0000ff;
+      --color: #181818;
+      --color-hover: #fff;
+    }
+
+    &--white {
+      --border-color: #fdfeff;
+      --bg-color: rgba(255, 255, 255, 0);
+      --bg-color-hover: #fdfeff;
+      --color: #fdfeff;
+      --color-hover: #000;
+    }
+
     display: inline-block;
 
-    border-bottom: 0.2rem solid #0000ff;
-    background-color: #fff;
-    color: #181818;
+    border-bottom: 0.2rem solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--color);
     font-family: $gothamPro;
     font-size: 1.8rem;
 
@@ -74,7 +99,7 @@
         content: '*';
         display: block;
 
-        color: #181818;
+        color: #f00b3c;
         font-family: $gothamPro;
         font-size: 2.4rem;
         line-height: 1em;
@@ -96,6 +121,7 @@
 
       border: none;
       background-color: rgba(255,255,255, 0);
+      color: var(--color);
 
       font-size: inherit;
       font-family: inherit;

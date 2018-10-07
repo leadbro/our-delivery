@@ -7,9 +7,10 @@
       :text="text"
       :pictures="pictures"
     />
+
     <our-documents class="page-docs__documents"/>
 
-    <banner-form/>
+    <banner-form class="page-docs__form"/>
   </div>
 </template>
 
@@ -44,14 +45,9 @@ export default {
 
   .page-docs {
     padding-top: 12rem;
-    padding-bottom: 8rem;
 
-    &__advantages {
-      margin-bottom: 10rem;
-    }
-
-    &__about-us {
-      margin-bottom: 18rem;
+    &__documents {
+      margin-bottom: 8rem;
     }
 
     &__banner {

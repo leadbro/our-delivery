@@ -2,7 +2,10 @@
   <div class="banner-form">
     <div class="banner-form__container container">
       <h2 class="banner-form__title">Заказать доставку</h2>
-      <form-order class="banner-form__form" type="white"/>
+      <form-order
+        class="banner-form__form"
+        color-scheme="white"
+      />
     </div>
     <picture class="banner-form__picture">
       <img
@@ -16,19 +19,18 @@
 <script>
   export default {
     name: 'BannerForm',
-    components: {
-
-    },
-    computed: {
-
-    },
+    components: {},
+    computed: {},
     methods: {}
   }
 </script>
 
-<style scoped lang="scss">
-@import "../assets/mixins.scss";
-  
+<style
+  scoped
+  lang="scss"
+>
+  @import "../assets/mixins.scss";
+
   .banner-form {
     padding-top: 9.5rem;
 
@@ -75,5 +77,5 @@
       }
     }
   }
-  
+
 </style>

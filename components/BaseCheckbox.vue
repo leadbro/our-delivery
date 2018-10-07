@@ -1,6 +1,7 @@
 <template>
   <label
       class="base-checkbox"
+      :class="baseCheckboxClass"
   >
     <input
         v-bind="$attrs"
@@ -33,6 +34,12 @@
             this.$emit('change', e.target.value)
           }
         }
+      },
+      baseCheckboxClass() {
+        return {
+          'base-checkbox--white': this.colorScheme === 'white',
+          'base-checkbox--blue': this.colorScheme === 'blue',
+        }
       }
     },
     props: {
@@ -43,6 +50,12 @@
       value: {
         type: String,
         default: ''
+      },
+      colorScheme: {
+        type: String,
+        default() {
+          return 'blue'
+        }
       }
     },
   };
@@ -54,6 +67,19 @@
   /*todo: убрать возможность выделить текст*/
 
   .base-checkbox {
+
+    &--blue {
+      --border-color: #bababa;
+      --border-color-hover: #0000ff;
+      --color: #181818;
+    }
+
+    &--white {
+      --border-color: #bababa;
+      --border-color-hover: #fdfeff;
+      --color: #fdfeff;
+    }
+
     display: inline-flex;
     align-items: center;
 
@@ -71,7 +97,7 @@
     &__checkbox {
       --checkbox-size: 2.1rem;
 
-      border: 0.1rem solid #bababa;
+      border: 0.1rem solid var(--border-color);
 
       margin-right: 1rem;
 
@@ -87,7 +113,7 @@
 
         display: block;
 
-        border: 2px solid #0000ff;
+        border: 2px solid var(--border-color-hover);
         border-top: none;
         border-left: none;
 
@@ -106,11 +132,11 @@
     }
 
     &__input:focus + &__checkbox {
-      border: 1px solid #0000ff;
+      border: 1px solid var(--border-color-hover);
     }
 
     &:hover &__checkbox {
-      border: 1px solid #0000ff;
+      border: 1px solid var(--border-color-hover);
     }
 
     &__input:checked + &__checkbox:after {
@@ -119,7 +145,7 @@
     }
 
     &__label {
-      color: #181818;
+      color: var(--color);
       font-family: $PTSans;
       font-size: 1.2rem;
 
