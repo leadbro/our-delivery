@@ -70,23 +70,23 @@
   }
 
   .fade-enter-active {
-    animation: fade-in .5s;
+    animation: fade-in 2s;
   }
   .fade-leave-active {
-    animation: fade-out .3s;
+    animation: fade-out .6s;
   }
 
   @keyframes fade-in {
     0% {
-      opacity: .4
+      opacity: .8;
     }
     100% {
-      opacity: 1
+      opacity: 1;
     }
   }
   @keyframes fade-out {
     0% {  opacity: 1 }
-    100% { opacity: 0 }
+    100% { opacity: .7 }
   }
 </style>
 
