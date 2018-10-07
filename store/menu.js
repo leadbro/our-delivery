@@ -1,10 +1,10 @@
 export const state = () => ({
   list: [
-    { id: 0, name: 'О нас', to: '/' },
-    { id: 1, name: 'Услуги', to: '/' },
-    { id: 2, name: 'Тарифы и сроки', to: '/' },
+    { id: 0, name: 'О нас', to: '/about' },
+    { id: 1, name: 'Услуги', to: '/services' },
+    { id: 2, name: 'Тарифы и сроки', to: '/tariffs' },
     { id: 3, name: 'Документы', to: '/docs' },
-    { id: 4, name: 'Контакты', to: '/' },
+    { id: 4, name: 'Контакты', to: '/contacts' },
   ]
 });
 

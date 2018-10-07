@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-form">
+  <div class="banner-form" id="banner-form">
     <div class="banner-form__container container">
       <h2 class="banner-form__title">Заказать доставку</h2>
       <form-order

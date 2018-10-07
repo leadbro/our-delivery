@@ -26,6 +26,7 @@ module.exports = {
   ],
   plugins: [
     { src: '~/plugins/base-components'},
+    { src: '~/plugins/vue-scroll-to'},
     { src: '~/plugins/vue-awesome-swiper', ssr: false }
   ],
   modules: [

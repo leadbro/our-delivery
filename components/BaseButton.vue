@@ -18,6 +18,7 @@
         return {
           'base-button--white': this.colorScheme === 'white',
           'base-button--blue': this.colorScheme === 'blue',
+          'base-button--small': this.size === 'small',
         }
       }
     },
@@ -26,6 +27,12 @@
         type: String,
         default() {
           return 'blue'
+        }
+      },
+      size: {
+        type: String,
+        default() {
+          return ''
         }
       }
     }
@@ -51,6 +58,14 @@
       --bg-color-hover: #fdfeff;
       --color: #fdfeff;
       --color-hover: #000;
+    }
+
+    &--small {
+      font-size: 2.6rem;
+
+      padding: 0 7rem;
+
+      height: 5.6rem;
     }
 
     display: inline-flex;

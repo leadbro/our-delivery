@@ -3,7 +3,7 @@
     <div class="our-services-layer-top__container container">
       <div class="our-services-layer-top__content">
           <base-title class="our-services-layer-top__title">{{ _item.title }}</base-title>
-          <div class="our-services-layer-top__text">{{ _item.text }}</div>
+          <div class="our-services-layer-top__text">{{ _item.previewText }}</div>
           <base-button-2  class="our-services-layer-top__button">Подробнее</base-button-2>
       </div>
       <div class="our-services-layer-top__controls">
