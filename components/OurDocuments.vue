@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import Documents from '~/components/Documents'
+  import Documents from '~/components/Documents/Documents'
 
   export default {
     name: 'OurDocuments',

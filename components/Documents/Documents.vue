@@ -16,7 +16,7 @@
 <script>
   import {mapGetters} from 'vuex';
 
-  import DocumentsItem from '~/components/DocumentsItem';
+  import DocumentsItem from './DocumentsItem';
 
 
   export default {
@@ -36,16 +36,17 @@
   scoped
   lang="scss"
 >
-  @import "../assets/mixins.scss";
+  @import "../../assets/mixins";
 
   .documents {
-
-    &__list {
-
-    }
+    display: flex;
+    flex-wrap: wrap;
 
     &__item {
+      margin-right: 10rem;
+      margin-bottom: 3.2rem;
 
+      width: calc(50% - 20rem);
     }
   }
 

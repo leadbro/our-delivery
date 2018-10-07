@@ -4,14 +4,21 @@ export const state = () => ({
       id: 0,
       name: 'Заявление о смене адреса доставки',
       src: '/test/',
-      type: 'MS Word',
+      type: 'docx',
       size: '160 Kb'
     },
     {
       id: 1,
       name: 'Заявление о смене грузополучателя',
       src: '/test/',
-      type: 'MS Excel',
+      type: 'xlsx',
+      size: '160 Kb'
+    },
+    {
+      id: 2,
+      name: 'Заявление о смене грузополучателя',
+      src: '/test/',
+      type: 'xlsx',
       size: '160 Kb'
     },
   ]
