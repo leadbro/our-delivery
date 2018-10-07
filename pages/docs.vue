@@ -8,6 +8,8 @@
       :pictures="pictures"
     />
     <our-documents class="page-docs__documents"/>
+
+    <banner-form/>
   </div>
 </template>
 

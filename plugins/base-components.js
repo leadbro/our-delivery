@@ -9,6 +9,7 @@ import BaseTitle from "../components/BaseTitle";
 import BaseTitleSmall from "../components/BaseTitleSmall";
 import BasePaginationNumbered from "../components/BasePaginationNumbered";
 import FormOrder from "../components/FormOrder";
+import BannerForm from "../components/BannerForm";
 
 const components = {
   AppBanner,
@@ -19,7 +20,8 @@ const components = {
   BaseTitle,
   BaseTitleSmall,
   BasePaginationNumbered,
-  FormOrder
+  FormOrder,
+  BannerForm
 };
 
 Object.keys(components).forEach(key => {
