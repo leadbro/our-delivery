@@ -11,7 +11,7 @@
     </div>
 
     <app-header-form
-        class="header__form"
+      class="header__form"
     />
   </header>
 </template>
