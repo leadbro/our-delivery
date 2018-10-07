@@ -9,8 +9,7 @@ export const getters = {
 };
 
 export const mutations = {
-  setList(state, payload) {
-
+  setListFromApi(state, payload) {
     state.list = payload.map(i => {
       return {
         id: i.id,
@@ -22,12 +21,15 @@ export const mutations = {
         }
       }
     })
-  }
+  },
+  setItems(state, payload) {
+    state.list = payload
+  },
 };
 
 export const actions = {
   async GET_ITEMS({ state, commit }) {
     let response = await this.$axios.$get('/posts/', {params: {categories: 2}});
-    commit('setList', response);
+    commit('setListFromApi', response);
   }
 };

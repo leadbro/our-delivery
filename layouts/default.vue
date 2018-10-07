@@ -24,6 +24,11 @@
 <style lang="scss">
   @import "../assets/mixins.scss";
 
+  html:root {
+    --banner-width: calc((1411 / 1903) * 100%);
+    --banner-height: 57.7rem;
+  }
+
   *,
   *:before,
   *:after {
@@ -62,6 +67,26 @@
     &:focus {
       outline-color: #0000ff;
     }
+  }
+
+  .fade-enter-active {
+    animation: fade-in .5s;
+  }
+  .fade-leave-active {
+    animation: fade-out .3s;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: .4
+    }
+    100% {
+      opacity: 1
+    }
+  }
+  @keyframes fade-out {
+    0% {  opacity: 1 }
+    100% { opacity: 0 }
   }
 </style>
 

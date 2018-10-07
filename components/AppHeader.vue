@@ -1,7 +1,5 @@
 <template>
   <header class="header">
-    <app-header-slider class="header__slider"/>
-
     <div class="header__container container">
       <app-header-nav/>
       <div class="header__contacts">
@@ -9,24 +7,16 @@
         <div class="header__contacts-btn">Обратный звонок</div>
       </div>
     </div>
-
-    <app-header-form
-      class="header__form"
-    />
   </header>
 </template>
 
 <script>
   import AppHeaderNav from '~/components/AppHeaderNav';
-  import AppHeaderSlider from '~/components/AppHeaderSlider';
-  import AppHeaderForm from '~/components/AppHeaderForm';
 
   export default {
     name: 'AppHeader',
     components: {
       AppHeaderNav,
-      AppHeaderSlider,
-      AppHeaderForm
     },
     computed: {}
   }
@@ -36,10 +26,6 @@
   @import "../assets/mixins.scss";
 
   .header {
-    --slider-width: calc((1411 / 1903) * 100%);
-    --slider-height: 57.7rem;
-
-    position: relative;
 
     &__container {
       display: flex;
@@ -50,10 +36,7 @@
 
       max-width: 158.5rem;
 
-      height: var(--slider-height);
-
-      position: relative;
-      z-index: 2;
+      height: var(--banner-height);
     }
 
     &__contacts {
@@ -61,6 +44,9 @@
       align-items: center;
 
       margin-left: auto;
+
+      position: relative;
+      z-index: 10;
 
       &-phone {
         color: #fdfeff;
@@ -78,20 +64,6 @@
 
         margin-left: 6rem;
       }
-    }
-
-    &__slider {
-      width: var(--slider-width);
-      height: var(--slider-height);
-
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 3;
-    }
-
-    &__form {
-      padding-left: calc(100vw - var(--slider-width));
     }
   }
 

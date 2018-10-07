@@ -3,7 +3,7 @@ export const state = () => ({
     { id: 0, name: 'О нас', to: '/' },
     { id: 1, name: 'Услуги', to: '/' },
     { id: 2, name: 'Тарифы и сроки', to: '/' },
-    { id: 3, name: 'Документы', to: '/' },
+    { id: 3, name: 'Документы', to: '/docs' },
     { id: 4, name: 'Контакты', to: '/' },
   ]
 });

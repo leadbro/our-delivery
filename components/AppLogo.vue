@@ -4,6 +4,7 @@
     <div class="logo__text">
       Наша доставка
     </div>
+    <nuxt-link class="logo__link" to="/"></nuxt-link>
   </div>
 </template>
 
@@ -16,6 +17,21 @@
 
     font-size: 4rem;
     line-height: 4.024rem;
+
+    position: relative;
+
+    &__link {
+      display: block;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+
+      opacity: 0;
+    }
 
     &__icon {
       height: 10.1rem;

@@ -1,46 +1,39 @@
 <template>
   <section class="header-slider">
     <swiper
-        v-if="_items"
-        :options="swiperOptions"
-        ref="swiper"
-        class="header-slider__swiper"
+      v-if="_items"
+      :options="swiperOptions"
+      ref="swiper"
+      class="header-slider__swiper"
     >
       <swiper-slide
-          v-for="item in _items"
-          :key="item.id"
-          class="header-slider__item"
+        v-for="item in _items"
+        :key="item.id"
+        class="header-slider__item"
       >
-        <slot :item="item">
-          <picture class="header-slider__picture">
-            <img
-                :src="item.pictures.mobile"
-                :alt="item.title"
-            />
-          </picture>
-          <div class="header-slider__content">
-            <h2>{{ item.title }}</h2>
-            <h3>{{ item.subtitle }}</h3>
-            <p v-html="item.text"></p>
-          </div>
-        </slot>
+        <app-banner
+          :title="item.title"
+          :subtitle="item.subtitle"
+          :text="item.text"
+          :pictures="item.pictures"
+        />
       </swiper-slide>
     </swiper>
     <div class="header-slider__navigation">
       <button
-          @click="goPrev()"
-          class="header-slider__button header-slider__button--prev"
+        @click="goPrev()"
+        class="header-slider__button header-slider__button--prev"
       />
       <button
-          @click="goNext()"
-          class="header-slider__button header-slider__button--next"
+        @click="goNext()"
+        class="header-slider__button header-slider__button--next"
       />
     </div>
   </section>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'AppHeaderSlider',
@@ -49,6 +42,7 @@
         swiperOptions: {
           effect: "fade",
           loop: true,
+          observer: true,
           autoplay: {
             delay: 6000,
             disableOnInteraction: false
@@ -76,7 +70,10 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style
+  lang="scss"
+  scoped
+>
   @import "../assets/mixins.scss";
 
   .header-slider {
@@ -101,7 +98,7 @@
         content: '';
         display: block;
 
-        background-color: rgba(0,0,0,.4);
+        background-color: rgba(0, 0, 0, .4);
 
         position: absolute;
         top: 0;
@@ -192,8 +189,8 @@
         height: var(--arrow-height);
 
         position: absolute;
-        left: calc(50% - var(--arrow-width)/2);
-        top: calc(50% - var(--arrow-height)/2);
+        left: calc(50% - var(--arrow-width) / 2);
+        top: calc(50% - var(--arrow-height) / 2);
       }
 
       &--next:before {
