@@ -9,11 +9,18 @@
     />
 
     <contacts-maps class="page-contacts__maps"/>
+
+    <div class="page-contacts__form-container container">
+      <h3 class="page-contacts__form-title">для связи с нами заполните форму</h3>
+      <form-message class="page-contacts__form-message"/>
+    </div>
+
   </div>
 </template>
 
 <script>
 import ContactsMaps from '~/components/ContactsMaps'
+import FormMessage from '~/components/FormMessage'
 
 export default {
   name: 'docs',
@@ -30,7 +37,8 @@ export default {
     }
   },
   components: {
-    ContactsMaps
+    ContactsMaps,
+    FormMessage
   },
   async fetch({store}) {
     await store.dispatch('advantages/GET_ITEMS');
@@ -42,11 +50,8 @@ export default {
 @import "../assets/mixins.scss";
 
   .page-contacts {
-    padding-top: 12rem;
-
-    &__documents {
-      margin-bottom: 8rem;
-    }
+    margin-top: -2.6rem;
+    padding-bottom: 14rem;
 
     &__banner {
       width: var(--banner-width);
@@ -56,6 +61,18 @@ export default {
       right: 0;
       top: 0;
       z-index: 3;
+    }
+
+    &__maps {
+      margin-bottom: 6rem;
+    }
+
+    &__form {
+
+      &-title {
+        font-family: $bebasNeueBold;
+        font-size: 5.5rem;
+      }
     }
   }
 
