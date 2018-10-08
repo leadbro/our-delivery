@@ -46,7 +46,7 @@
       margin-right: 10rem;
       margin-bottom: 3.2rem;
 
-      width: calc(50% - 20rem);
+      width: calc(50% - 10rem);
     }
   }
 

@@ -1,38 +1,38 @@
 <template>
-  <div class="page-docs">
+  <div class="page-about">
     <app-banner
-      class="page-docs__banner"
+      class="page-about__banner"
       :title="title"
       :subtitle="subtitle"
       :text="text"
       :pictures="pictures"
     />
 
-    <our-documents class="page-docs__documents"/>
+    <about-delivery class="page-about__about-us"/>
 
-    <banner-form class="page-docs__form"/>
+    <banner-form class="page-about__form"/>
   </div>
 </template>
 
 <script>
-  import OurDocuments from '~/components/OurDocuments'
+  import AboutDelivery from '~/components/AboutDelivery';
 
 export default {
   name: 'docs',
   transition: 'fade',
   data() {
     return {
-      title: 'Документы',
+      title: 'Наша доставка',
       subtitle: '',
       text: 'Компания ООО «Наша Доставка» транспортно-экспедиционная компания\n' +
         'с большим опытом грузоперевозок по России и странам таможенного союза. Более 2-х лет мы доставляем грузы от Калининграда до Владивостока, в Республику Беларусь и Казахстан. Нами было доставлено более 3000 грузов. \n',
       pictures: {
-        mobile: '/images/slider/documents.jpg'
+        mobile: '/images/banners/services.jpg'
       }
     }
   },
   components: {
-    OurDocuments
+    AboutDelivery
   },
   async fetch({store}) {
     await store.dispatch('advantages/GET_ITEMS');
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/mixins.scss";
 
-  .page-docs {
+  .page-about {
     padding-top: 12rem;
 
     &__documents {
