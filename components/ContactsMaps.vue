@@ -13,31 +13,14 @@
 
       </div>
 
-      <GmapMap
-        class="contacts-maps__map"
-        :center="markers.moskow.position"
-        :zoom="17"
-        map-type-id="terrain"
-        style="width: 918px; height: 515px"
-      >
-        <GmapMarker
-          :position="markers.moskow.position"
-
-        />
-      </GmapMap>
+      <div class="contacts-maps__map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2579347dc33c421edc5a28334d7c5638c2c757177f95c5eb65202cda9470e38d&amp;width=918&amp;height=515&amp;lang=ru_RU&amp;scroll=true"></script>
+      </div>
     </div>
     <div class="contacts-maps__item">
-      <GmapMap
-        class="contacts-maps__map"
-        :center="markers.sterlitamak.position"
-        :zoom="17"
-        map-type-id="terrain"
-        style="width: 783px; height: 515px"
-      >
-        <GmapMarker
-          :position="markers.sterlitamak.position"
-        />
-      </GmapMap>
+      <div class="contacts-maps__map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adb624cc4442a1dca38f7732a4f575ed14503ba67b8dd4a9ca4819a7a5fc4686e&amp;width=783&amp;height=515&amp;lang=ru_RU&amp;scroll=true"></script>
+      </div>
 
       <div class="contacts-maps__text contacts-maps__text--red">
         <h2 class="contacts-maps__title">Стерлитамак, <br/>Республика Башкортостан</h2>
@@ -51,16 +34,6 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import * as VueGoogleMaps from 'vue2-google-maps'
-
-  Vue.use(VueGoogleMaps, {
-    load: {
-      key: 'AIzaSyDNPJJQhtPmOwAP4oJ8-w6b-cyy2WR6CKs',
-      libraries: 'places',
-    },
-  });
-
   export default {
     name: 'ContactsMaps',
     data() {

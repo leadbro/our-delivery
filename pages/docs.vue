@@ -35,7 +35,7 @@ export default {
     OurDocuments
   },
   async fetch({store}) {
-    await store.dispatch('advantages/GET_ITEMS');
+    await store.dispatch('documents/getItems');
   }
 }
 </script>

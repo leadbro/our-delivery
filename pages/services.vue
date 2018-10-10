@@ -13,7 +13,7 @@
         <base-title-small class="page-services__title">Мы доставляем</base-title-small>
         <services
           class="page-services__services"
-          :items="provideItems"
+          :items="deliverItems"
         />
 
         <base-title-small class="page-services__title">Мы предоставляем</base-title-small>
@@ -52,11 +52,14 @@
     },
     computed: {
       ...mapGetters({
-        provideItems: 'services/items',
+        provideItems: 'services/provideItems',
+        deliverItems: 'services/deliverItems',
       })
     },
     async fetch({store}) {
-      await store.dispatch('advantages/GET_ITEMS');
+      await store.dispatch('advantages/getItems');
+      await store.dispatch('services/getItems');
+
     }
   }
 </script>

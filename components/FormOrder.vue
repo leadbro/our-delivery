@@ -1,8 +1,9 @@
 <template>
-  <form class="form-order">
+  <form class="form-order" @submit.prevent="onFormSubmit">
     <base-input
       class="form-order__input"
       placeholder="Имя"
+      v-model="formData.name"
       :color-scheme="colorScheme"
     />
 
@@ -10,6 +11,7 @@
       required="required"
       class="form-order__input"
       placeholder="Телефон"
+      v-model="formData.phone"
       :color-scheme="colorScheme"
     />
 
@@ -17,12 +19,16 @@
       class="form-order__submit"
       type="submit"
       :color-scheme="colorScheme"
-    >Заказать
+      :disabled="isFormSuccess"
+    >{{buttonText}}
     </base-button>
 
     <base-checkbox
       class="form-order__checkbox"
+      type="submit"
+      checked="checked"
       :color-scheme="colorScheme"
+
     >
       Я соглашаюсь на обработку <a href="/">персональных данных</a>
     </base-checkbox>
@@ -32,6 +38,13 @@
 <script>
   export default {
     name: 'FormOrder',
+    data() {
+      return {
+        formData: {},
+        isFormSuccess: false,
+        buttonText: 'Заказать'
+      }
+    },
     components: {},
     computed: {
       formClass() {
@@ -41,7 +54,21 @@
         }
       }
     },
-    methods: {},
+    methods: {
+      async onFormSubmit() {
+        let response = await this.$axios({
+          baseURL: 'http://xn--80aaaajk8bsm4al1e.xn--p1ai/',
+          url: 'form-handler.php',
+          method: 'post',
+          params: this.formData
+        });
+
+        if (response.data.success) {
+          this.isFormSuccess = true;
+          this.buttonText = 'Успешно';
+        }
+      }
+    },
     props: {
       colorScheme: {
         type: String,

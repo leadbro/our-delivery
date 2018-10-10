@@ -16,7 +16,7 @@ export default {
   layout: 'dev',
   data() {
     return {
-      currentItemId: 0
+      currentItemIndex: 0
     }
   },
   computed: {

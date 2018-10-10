@@ -1,8 +1,9 @@
 <template>
-  <form class="form-message">
+  <form class="form-message" @submit.prevent="onFormSubmit">
     <base-input
       class="form-message__input"
       placeholder="Имя"
+      v-model="formData.name"
       :color-scheme="colorScheme"
     />
 
@@ -10,25 +11,28 @@
       required="required"
       class="form-message__input"
       placeholder="Телефон"
+      v-model="formData.phone"
       :color-scheme="colorScheme"
     />
 
     <base-input
       class="form-message__input"
       placeholder="Компания"
+      v-model="formData.company"
       :color-scheme="colorScheme"
     />
 
     <base-input
-      required="required"
       class="form-message__input"
       placeholder="E-mail"
+      v-model="formData.email"
       :color-scheme="colorScheme"
     />
 
     <base-textarea
       class="form-message__textarea"
       placeholder="Сообщение"
+      v-model="formData.message"
       :color-scheme="colorScheme"
     />
 
@@ -43,7 +47,8 @@
       class="form-message__submit"
       type="submit"
       :color-scheme="colorScheme"
-    >Заказать
+      :disabled="isFormSuccess"
+    >{{buttonText}}
     </base-button>
 
 
@@ -52,7 +57,14 @@
 
 <script>
   export default {
-    name: 'FormOrder',
+    name: 'FormMessage',
+    data() {
+      return {
+        formData: {},
+        isFormSuccess: false,
+        buttonText: 'Заказать'
+      }
+    },
     components: {},
     computed: {
       formClass() {
@@ -62,7 +74,21 @@
         }
       }
     },
-    methods: {},
+    methods: {
+      async onFormSubmit() {
+        let response = await this.$axios({
+          baseURL: 'http://xn--80aaaajk8bsm4al1e.xn--p1ai/',
+          url: 'form-handler.php',
+          method: 'post',
+          params: this.formData
+        });
+
+        if (response.data.success) {
+          this.isFormSuccess = true;
+          this.buttonText = 'Успешно';
+        }
+      }
+    },
     props: {
       colorScheme: {
         type: String,

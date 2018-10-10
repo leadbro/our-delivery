@@ -1,27 +1,5 @@
 export const state = () => ({
-  list: [
-    {
-      id: 0,
-      name: 'Заявление о смене адреса доставки',
-      src: '/test/',
-      type: 'docx',
-      size: '160 Kb'
-    },
-    {
-      id: 1,
-      name: 'Заявление о смене грузополучателя',
-      src: '/test/',
-      type: 'xlsx',
-      size: '160 Kb'
-    },
-    {
-      id: 2,
-      name: 'Заявление о смене грузополучателя',
-      src: '/test/',
-      type: 'xlsx',
-      size: '160 Kb'
-    },
-  ]
+  list: []
 });
 
 
@@ -37,17 +15,17 @@ export const mutations = {
       return {
         id: i.id,
         name: i.title.rendered,
-        type: '',
-        src: i.content.rendered,
-        size: i.acf.icon.url
+        type: i.acf.file.filename.split('.').pop(),
+        src: i.acf.file.url,
+        size: parseInt(i.acf.file.filesize / 1000) + 'Kb'
       }
     })
   }
 };
 
 export const actions = {
-  async GET_ITEMS({ state, commit }) {
-    let response = await this.$axios.$get('/posts/', {params: {categories: 4}});
+  async getItems({ state, commit }) {
+    let response = await this.$axios.$get('/posts/', {params: {categories: 6}});
 
     commit('setList', response);
   }

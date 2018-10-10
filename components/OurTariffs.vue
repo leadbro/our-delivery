@@ -5,13 +5,14 @@
         Найдем лучшее решение для вашего проекта
       </base-title-small>
 
-      <documents class="our-tariffs__documents"/>
+      <documents class="our-tariffs__documents" :items="_items"/>
     </div>
   </section>
 </template>
 
 <script>
   import Documents from '~/components/Documents/Documents'
+  import {mapGetters} from 'vuex';
 
   export default {
     name: 'OurTariffs',
@@ -19,7 +20,9 @@
       Documents
     },
     computed: {
-
+      ...mapGetters({
+        _items: 'tariffs/items'
+      })
     }
   }
 </script>

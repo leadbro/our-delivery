@@ -10,7 +10,7 @@
         :items="_items"
         v-if="_item"
         :speed="speed"
-        :current-item-id="currentItemId"
+        :current-item-index="currentItemIndex"
         @set-index="onSetIndex"
     />
   </section>
@@ -26,7 +26,7 @@
     name: 'OurServices',
     data() {
       return {
-        currentItemId: 0,
+        currentItemIndex: 0,
         intervalId: 0
       }
     },
@@ -36,13 +36,13 @@
         getItemById: 'services/getItemById',
       }),
       _item() {
-        return this.getItemById(this.currentItemId)
+        return this._items[this.currentItemIndex]
       },
     },
     methods: {
       slideNext() {
-        let nextSlideId = this.currentItemId + 1;
-        this.currentItemId = nextSlideId >= this._items.length ? 0 : nextSlideId;
+        let nextSlideId = this.currentItemIndex + 1;
+        this.currentItemIndex = nextSlideId >= this._items.length ? 0 : nextSlideId;
 
         return nextSlideId;
       },
@@ -59,7 +59,7 @@
         this.init()
       },
       onSetIndex(id) {
-        this.currentItemId = id;
+        this.currentItemIndex = id;
         this.reInit();
       }
     },
@@ -73,7 +73,7 @@
         default: 5000
       }
     },
-    created() {
+    mounted() {
       this.init();
     }
   }

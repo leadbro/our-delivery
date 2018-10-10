@@ -58,5 +58,10 @@
         transform: scale(1);
       }
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 </style>

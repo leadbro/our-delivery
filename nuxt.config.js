@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'перевозки по россии быстро и надежно' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       {
         rel: "stylesheet",
         href:
@@ -27,6 +27,7 @@ module.exports = {
   plugins: [
     { src: '~/plugins/base-components'},
     { src: '~/plugins/vue-scroll-to'},
+    { src: '~/plugins/vue-google-maps', ssr: false },
     { src: '~/plugins/vue-awesome-swiper', ssr: false }
   ],
   modules: [

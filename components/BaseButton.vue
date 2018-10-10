@@ -72,8 +72,7 @@
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
-    
+
     border: 0.2rem solid var(--border-color);
     background-color: var(--bg-color);
     color: var(--color);
@@ -91,8 +90,12 @@
 
     &:hover,
     &:focus {
-      background-color: var(--bg-color-hover);
-      color: var(--color-hover);
+
+      &:not([disabled]) {
+        background-color: var(--bg-color-hover);
+        color: var(--color-hover);
+        cursor: pointer;
+      }
     }
   }
 </style>

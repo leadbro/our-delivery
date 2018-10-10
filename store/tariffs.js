@@ -14,9 +14,10 @@ export const mutations = {
     state.list = payload.map(i => {
       return {
         id: i.id,
-        title: i.title.rendered,
-        text: i.content.rendered,
-        icon: i.acf.icon.url
+        name: i.title.rendered,
+        type: i.acf.file.filename.split('.').pop(),
+        src: i.acf.file.url,
+        size: parseInt(i.acf.file.filesize / 1000) + 'Kb'
       }
     })
   }
@@ -24,8 +25,7 @@ export const mutations = {
 
 export const actions = {
   async getItems({ state, commit }) {
-    let response = await this.$axios.$get('/posts/', {params: {categories: 4}});
-
+    let response = await this.$axios.$get('/posts/', {params: {categories: 7}});
     commit('setList', response);
   }
 };

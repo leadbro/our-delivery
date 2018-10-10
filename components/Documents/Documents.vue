@@ -14,8 +14,6 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
-
   import DocumentsItem from './DocumentsItem';
 
 
@@ -25,9 +23,17 @@
       DocumentsItem
     },
     computed: {
-      ...mapGetters({
-        _items: 'documents/items'
-      })
+      _items() {
+        return this.items
+      }
+    },
+    props: {
+      items: {
+        type: Array,
+        default() {
+          return []
+        }
+      }
     }
   }
 </script>

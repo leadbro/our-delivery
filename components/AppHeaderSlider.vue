@@ -1,17 +1,18 @@
 <template>
   <section class="header-slider">
     <swiper
+      class="header-slider__swiper"
       v-if="_items"
       :options="swiperOptions"
       ref="swiper"
-      class="header-slider__swiper"
     >
       <swiper-slide
+        class="header-slider__item"
         v-for="item in _items"
         :key="item.id"
-        class="header-slider__item"
       >
         <app-banner
+          class="header-slider__banner"
           :title="item.title"
           :subtitle="item.subtitle"
           :text="item.text"
@@ -21,12 +22,12 @@
     </swiper>
     <div class="header-slider__navigation">
       <button
-        @click="goPrev()"
         class="header-slider__button header-slider__button--prev"
+        @click="goPrev()"
       />
       <button
-        @click="goNext()"
         class="header-slider__button header-slider__button--next"
+        @click="goNext()"
       />
     </div>
   </section>
@@ -113,6 +114,10 @@
         height: 100%;
         width: 100%;
       }
+    }
+
+    &__banner {
+      height: 100%;
     }
 
     &__content {

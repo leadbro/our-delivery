@@ -1,27 +1,5 @@
 export const state = () => ({
-  list: [
-    {
-      id: 0,
-      color: '#f00b3c',
-      title: 'Доставка сборного груза',
-      iconSrc: '/images/icons/services/house.png',
-      previewText: 'Компания «Наша Доставка» осуществляет перевозки сборного груза по всей территории РФ и стран таможенного союза.',
-      text: 'Доставка сборного груза осуществляется напрямую «до двери» получателя без складских перегрузов в регионах. <ul><li>Доставка сборного груза осуществляется напрямую «до двери» получателя без складских перегрузов в регионах.</li><li>Доставка сборного груза осуществляется напрямую «до двери» получателя без складских перегрузов в регионах.</li></ul>',
-      picture: {
-        mobile: '/images/our-services/1.jpg'
-      }
-    },
-    {
-      id: 1,
-      color: '#0727e7',
-      title: 'Ответственное хранение',
-      iconSrc: '/images/icons/services/house.png',
-      previewText: 'Компания «Наша Доставка» принимает грузы на ответственное хранение',
-      picture: {
-        mobile: '/images/slider/2.png'
-      }
-    },
-  ]
+  list: []
 });
 
 
@@ -29,7 +7,40 @@ export const getters = {
   items(state) {
     return state.list
   },
+  provideItems(state) {
+    return state.list.filter(i => i.type === 'Предоставляем')
+  },
+  deliverItems(state) {
+    return state.list.filter(i => i.type === 'Доставляем')
+  },
   getItemById: state => id => {
     return state.list.find(i => i.id === id);
   },
+};
+
+export const mutations = {
+  setList(state, payload) {
+    console.log(payload);
+    state.list = payload.map(i => {
+      return {
+        id: i.id,
+        color: i.acf.color,
+        title: i.title.rendered,
+        iconSrc: i.acf.icon,
+        previewText: i.acf.previewText,
+        text: i.acf.detailText,
+        type:  i.acf.type,
+        picture: {
+          mobile: i.acf.sliderPicture.url
+        }
+      }
+    })
+  }
+};
+
+export const actions = {
+  async getItems({ state, commit }) {
+    let response = await this.$axios.$get('/posts/', {params: {categories: 8}});
+    commit('setList', response);
+  }
 };

@@ -29,8 +29,9 @@
       OurServices
     },
     async fetch({store}) {
-      await store.dispatch('headerSlider/GET_ITEMS');
-      await store.dispatch('advantages/GET_ITEMS');
+      await store.dispatch('headerSlider/getItems');
+      await store.dispatch('advantages/getItems');
+      await store.dispatch('services/getItems');
     }
   }
 </script>

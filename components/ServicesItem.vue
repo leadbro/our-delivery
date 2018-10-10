@@ -81,6 +81,7 @@
     &__icon {
       display: block;
 
+      flex-shrink: 0;
       width: 6rem;
       height: 6rem;
 
