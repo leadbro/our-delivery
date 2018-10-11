@@ -2,11 +2,12 @@
   <article class="app-banner">
     <picture class="app-banner__picture">
       <img
-          :src="pictures.mobile"
-          :alt="title"
+        v-if="pictures && isWithPicture"
+        :src="pictures.mobile"
+        :alt="title"
       />
     </picture>
-    <div class="app-banner__content">
+    <div class="app-banner__content" v-if="isWithText">
       <h2>{{ title }}</h2>
       <h3>{{ subtitle }}</h3>
       <p v-html="text"></p>
@@ -28,6 +29,18 @@
         type: String,
         default() {
           return ''
+        }
+      },
+      isWithText: {
+        type: Boolean,
+        default() {
+          return true
+        }
+      },
+      isWithPicture: {
+        type: Boolean,
+        default() {
+          return true
         }
       },
       subtitle: {
@@ -69,7 +82,7 @@
         content: '';
         display: block;
 
-        background-color: rgba(0,0,0,.4);
+        background-color: rgba(0, 0, 0, .4);
 
         position: absolute;
         top: 0;

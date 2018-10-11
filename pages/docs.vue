@@ -8,7 +8,7 @@
       :pictures="pictures"
     />
 
-    <our-documents class="page-docs__documents"/>
+    <our-documents id="documents" class="page-docs__documents"/>
 
     <banner-form class="page-docs__form"/>
   </div>
@@ -31,8 +31,20 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: this.title
+    }
+  },
   components: {
     OurDocuments
+  },
+  mounted() {
+    /* Скролл к элементу по якорю в URL */
+    let hash = this.$route.hash;
+    if (hash) {
+      this.$scrollTo(hash);
+    }
   },
   async fetch({store}) {
     await store.dispatch('documents/getItems');
@@ -44,7 +56,6 @@ export default {
 @import "../assets/mixins.scss";
 
   .page-docs {
-    padding-top: 12rem;
 
     &__documents {
       margin-bottom: 8rem;

@@ -31,6 +31,11 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: this.title
+    }
+  },
   components: {
     AboutDelivery
   },
@@ -44,7 +49,7 @@ export default {
 @import "../assets/mixins.scss";
 
   .page-about {
-    padding-top: 12rem;
+    /*padding-top: 12rem;*/
 
     &__documents {
       margin-bottom: 8rem;

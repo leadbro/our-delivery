@@ -13,12 +13,12 @@
 
       </div>
 
-      <div class="contacts-maps__map">
+      <div class="contacts-maps__map" style="width: 918px; height: 515px;">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2579347dc33c421edc5a28334d7c5638c2c757177f95c5eb65202cda9470e38d&amp;width=918&amp;height=515&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
     <div class="contacts-maps__item">
-      <div class="contacts-maps__map">
+      <div class="contacts-maps__map" style="width: 783px;  height: 515px;">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adb624cc4442a1dca38f7732a4f575ed14503ba67b8dd4a9ca4819a7a5fc4686e&amp;width=783&amp;height=515&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
 

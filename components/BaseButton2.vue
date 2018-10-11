@@ -23,7 +23,6 @@
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
 
     border: none;
     background-color: rgba(255,255,255,0);
@@ -60,6 +59,7 @@
     }
 
     a {
+      cursor: pointer;
       color: inherit;
       text-decoration: none;
     }

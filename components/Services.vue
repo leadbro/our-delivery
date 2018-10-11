@@ -4,7 +4,7 @@
       class="services__item"
       v-for="item in _items"
       :key="item.id"
-      :title="item.title"
+      :title="item.servicesTitle"
       :preview-text="item.previewText"
       :text="item.text"
       :icon-src="item.iconSrc"

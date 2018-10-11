@@ -36,6 +36,11 @@ export default {
       }
     }
   },
+  head() {
+    return {
+      title: this.title
+    }
+  },
   components: {
     ContactsMaps,
     FormMessage

@@ -4,10 +4,10 @@
       <div class="our-services-layer-top__content">
           <base-title class="our-services-layer-top__title">{{ _item.title }}</base-title>
           <div class="our-services-layer-top__text">{{ _item.previewText }}</div>
-          <base-button-2  class="our-services-layer-top__button"><nuxt-link to="/services">Подробнее</nuxt-link></base-button-2>
+          <base-button-2  class="our-services-layer-top__button"><nuxt-link to="/services#services">Подробнее</nuxt-link></base-button-2>
       </div>
       <div class="our-services-layer-top__controls">
-        <nuxt-link class="our-services-layer-top__controls-title" to="/services">Наши услуги</nuxt-link>
+        <nuxt-link class="our-services-layer-top__controls-title" to="/services#services">Наши услуги</nuxt-link>
         <base-pagination-numbered
             class="our-services-layer-top__pagination"
             :current-id="currentItemIndex"

@@ -32,7 +32,7 @@
     },
     computed: {
       ...mapGetters({
-        _items: 'services/items',
+        _items: 'services/sliderItems',
         getItemById: 'services/getItemById',
       }),
       _item() {

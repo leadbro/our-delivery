@@ -3,6 +3,7 @@
     <app-header/>
     <nuxt/>
     <app-footer/>
+    <privacy-policy-modal/>
   </div>
 </template>
 
@@ -12,11 +13,13 @@
 
   import AppHeader from "~/components/AppHeader"
   import AppFooter from "~/components/AppFooter"
+  import PrivacyPolicyModal from "~/components/PrivacyPolicyModal"
 
   export default {
     components: {
       AppHeader,
-      AppFooter
+      AppFooter,
+      PrivacyPolicyModal
     }
   }
 </script>
@@ -36,14 +39,21 @@
   }
 
   html {
+    background-color: #081305;
     font-size: 10px;
     position: relative;
   }
 
   body {
+    background-color: #fff;
     font-family: $openSans;
     font-size: 1.6rem;
     width: 100%;
+  }
+
+  #app {
+    position: relative;
+    z-index: 1;
   }
 
   html,

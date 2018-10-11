@@ -9,7 +9,7 @@
           Перевозки по России быстро и надежно
         </base-title>
         <picture class="about-us__picture-left">
-          <img src="/images/about-us/rocket.jpg" alt="">
+          <img src="/images/about-us/rocket.jpg?v=1" alt="">
         </picture>
       </div>
       <div class="about-us__col-text">

@@ -7,8 +7,8 @@
       </div>
       <div class="footer__bottom">
         <ul class="footer__bottom-list">
-          <li class="footer__bottom-item"><span class="footer__bottom-link">Все права защищены</span></li>
-          <li class="footer__bottom-item"><nuxt-link class="footer__bottom-link" to="/">Политика конфиденциальности</nuxt-link></li>
+          <li class="footer__bottom-item"><span class="footer__bottom-span">Все права защищены</span></li>
+          <li class="footer__bottom-item"><button class="footer__bottom-link" @click.prevent="showPrivacy">Политика конфиденциальности</button></li>
         </ul>
       </div>
     </div>
@@ -25,6 +25,11 @@
     components: {
       AppLogo,
       AppFooterNav
+    },
+    methods: {
+      showPrivacy () {
+        this.$modal.show('privacy-policy');
+      }
     },
     computed: {}
   }
@@ -64,11 +69,22 @@
         margin-right: 1.4rem;
       }
 
-      &-link {
+      &-span {
         color: #fdfeff;
         font-family: $openSans;
         font-size: 1.4rem;
         line-height: 1.9rem;
+      }
+
+      &-link {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #fdfeff;
+        font-family: $openSans;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        text-decoration: underline;
         // Text style for "Политика к"
         letter-spacing: 0.035rem;
       }

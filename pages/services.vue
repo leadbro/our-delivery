@@ -8,7 +8,7 @@
       :pictures="pictures"
     />
 
-    <section class="page-services">
+    <section class="page-services" id="services">
       <div class="page-services__container container">
         <base-title-small class="page-services__title">Мы доставляем</base-title-small>
         <services
@@ -31,6 +31,8 @@
 <script>
   import {mapGetters} from 'vuex';
 
+  // import VueScrollTo from 'vue-scrollto';
+
   import Services from '~/components/Services'
 
   export default {
@@ -47,6 +49,11 @@
         }
       }
     },
+    head() {
+      return {
+        title: this.title
+      }
+    },
     components: {
       Services
     },
@@ -55,6 +62,14 @@
         provideItems: 'services/provideItems',
         deliverItems: 'services/deliverItems',
       })
+    },
+
+    mounted() {
+      /* Скролл к элементу по якорю в URL */
+      let hash = this.$route.hash;
+      if (hash) {
+        this.$scrollTo(hash);
+      }
     },
     async fetch({store}) {
       await store.dispatch('advantages/getItems');

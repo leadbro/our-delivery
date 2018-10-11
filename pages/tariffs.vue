@@ -8,9 +8,9 @@
       :pictures="pictures"
     />
 
-    <our-tariffs class="page-tariffs__tariffs"/>
+    <our-tariffs id="tariffs" class="page-tariffs__tariffs"/>
 
-    <warehousing class="page-tariffs__warehousing"/>
+    <!--<warehousing class="page-tariffs__warehousing"/>-->
 
     <banner-form class="page-tariffs__form"/>
   </div>
@@ -34,9 +34,21 @@
         }
       }
     },
+    head() {
+      return {
+        title: this.title
+      }
+    },
     components: {
       OurTariffs,
       Warehousing
+    },
+    mounted() {
+      /* Скролл к элементу по якорю в URL */
+      let hash = this.$route.hash;
+      if (hash) {
+        this.$scrollTo(hash);
+      }
     },
     async fetch({store}) {
       await store.dispatch('tariffs/getItems');
@@ -48,7 +60,6 @@
   @import "../assets/mixins.scss";
 
   .page-tariffs {
-    padding-top: 12rem;
 
     &__documents {
       margin-bottom: 8rem;

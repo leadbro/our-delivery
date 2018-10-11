@@ -2,7 +2,7 @@
   <section class="our-tariffs">
     <div class="out-tariffs__container container">
       <base-title-small class="our-tariffs__title">
-        Найдем лучшее решение для вашего проекта
+        Предоставим для Вас оптимальный тариф и сроки доставки
       </base-title-small>
 
       <documents class="our-tariffs__documents" :items="_items"/>

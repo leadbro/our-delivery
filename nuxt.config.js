@@ -27,6 +27,7 @@ module.exports = {
   plugins: [
     { src: '~/plugins/base-components'},
     { src: '~/plugins/vue-scroll-to'},
+    { src: '~/plugins/vue-js-modal'},
     { src: '~/plugins/vue-google-maps', ssr: false },
     { src: '~/plugins/vue-awesome-swiper', ssr: false }
   ],

@@ -2,7 +2,7 @@
   <section class="our-documents">
     <div class="our-documents__container container">
       <base-title-small class="our-documents__title">
-        Перевозки по России быстро и надежно
+        Необходимые документы всегда под рукой
       </base-title-small>
 
       <documents class="our-documents__documents" :items="_items"/>

@@ -30,7 +30,7 @@
       :color-scheme="colorScheme"
 
     >
-      Я соглашаюсь на обработку <a href="/">персональных данных</a>
+      Я соглашаюсь на обработку <a href="/" @click.prevent="showPrivacy">персональных данных</a>
     </base-checkbox>
   </form>
 </template>
@@ -67,6 +67,9 @@
           this.isFormSuccess = true;
           this.buttonText = 'Успешно';
         }
+      },
+      showPrivacy () {
+        this.$modal.show('privacy-policy');
       }
     },
     props: {

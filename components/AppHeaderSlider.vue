@@ -17,6 +17,7 @@
           :subtitle="item.subtitle"
           :text="item.text"
           :pictures="item.pictures"
+          :is-with-text="isWithText"
         />
       </swiper-slide>
     </swiper>
@@ -58,7 +59,15 @@
       },
       ...mapGetters({
         _items: 'headerSlider/items'
-      })
+      }),
+    },
+    props: {
+      isWithText: {
+        type: Boolean,
+        default() {
+          return true
+        }
+      },
     },
     methods: {
       goNext() {

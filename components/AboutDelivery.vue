@@ -15,7 +15,7 @@
       </header>
       <div class="about-delivery__content">
         <picture class="about-delivery__content-picture">
-          <img src="/images/about-us/rocket.jpg" alt="">
+          <img src="/images/about-us/rocket.jpg?v=1" alt="">
         </picture>
         <div class="about-delivery__content-text">
           <p>

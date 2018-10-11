@@ -7,6 +7,9 @@ export const getters = {
   items(state) {
     return state.list
   },
+  sliderItems(state) {
+    return state.list.filter(i => i.isOnSlider)
+  },
   provideItems(state) {
     return state.list.filter(i => i.type === 'Предоставляем')
   },
@@ -27,8 +30,10 @@ export const mutations = {
         color: i.acf.color,
         title: i.title.rendered,
         iconSrc: i.acf.icon,
+        servicesTitle: i.acf.servicesTitle || i.title.rendered,
         previewText: i.acf.previewText,
         text: i.acf.detailText,
+        isOnSlider: typeof i.acf.isOnSlider !== 'undefined',
         type:  i.acf.type,
         picture: {
           mobile: i.acf.sliderPicture.url
