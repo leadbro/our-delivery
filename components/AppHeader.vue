@@ -4,7 +4,7 @@
       <app-header-nav/>
       <div class="header__contacts">
         <a href="tel:+74951367399" class="header__contacts-phone">+7 (495) 136-73-99</a>
-        <div class="header__contacts-btn">Обратный звонок</div>
+        <!--<div class="header__contacts-btn">Обратный звонок</div>-->
       </div>
     </div>
   </header>

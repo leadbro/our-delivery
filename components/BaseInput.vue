@@ -45,7 +45,7 @@
             this.$emit('input', this.inputValue)
           }
         }
-      }
+      },
     },
     props: {
       value: {

@@ -24,8 +24,7 @@ export default {
     return {
       title: 'Документы',
       subtitle: '',
-      text: 'Компания ООО «Наша Доставка» транспортно-экспедиционная компания\n' +
-        'с большим опытом грузоперевозок по России и странам таможенного союза. Более 2-х лет мы доставляем грузы от Калининграда до Владивостока, в Республику Беларусь и Казахстан. Нами было доставлено более 3000 грузов. \n',
+      text: '',
       pictures: {
         mobile: '/images/banners/documents.jpg'
       }
@@ -43,7 +42,7 @@ export default {
     /* Скролл к элементу по якорю в URL */
     let hash = this.$route.hash;
     if (hash) {
-      this.$scrollTo(hash);
+      this.$scrollTo(hash, 1500);
     }
   },
   async fetch({store}) {

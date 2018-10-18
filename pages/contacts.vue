@@ -8,7 +8,7 @@
       :pictures="pictures"
     />
 
-    <contacts-maps class="page-contacts__maps"/>
+    <contacts-maps id="contacts" class="page-contacts__maps"/>
 
     <div class="page-contacts__form-container container">
       <h3 class="page-contacts__form-title">для связи с нами заполните форму</h3>
@@ -29,10 +29,9 @@ export default {
     return {
       title: 'Контакты',
       subtitle: '',
-      text: 'Компания ООО «Наша Доставка» транспортно-экспедиционная компания\n' +
-        'с большим опытом грузоперевозок по России и странам таможенного союза. Более 2-х лет мы доставляем грузы от Калининграда до Владивостока, в Республику Беларусь и Казахстан. Нами было доставлено более 3000 грузов. \n',
+      text: '',
       pictures: {
-        mobile: '/images/banners/contacts.jpg'
+        mobile: '/images/banners/contacts.jpg?v=1'
       }
     }
   },
@@ -44,6 +43,13 @@ export default {
   components: {
     ContactsMaps,
     FormMessage
+  },
+  mounted() {
+    /* Скролл к элементу по якорю в URL */
+    let hash = this.$route.hash;
+    if (hash) {
+      this.$scrollTo(hash, 1500);
+    }
   },
   async fetch({store}) {
     await store.dispatch('advantages/getItems');
