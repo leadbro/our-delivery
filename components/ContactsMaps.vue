@@ -6,7 +6,7 @@
         <h2 class="contacts-maps__title">Москва</h2>
 
         <h4>Адрес:</h4>
-        <p>117216, ул. Грина, дом 8, помещение II, К24</p>
+        <p>115201, 1-ый Котляковский переулок, д.12, помещение 1, комнаты 1,17,18.</p>
 
         <h4>Склад:</h4>
         <p>Москва, Фряновское шоссе 52.</p>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="contacts-maps__map" style="width: 918px; height: 783px">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2579347dc33c421edc5a28334d7c5638c2c757177f95c5eb65202cda9470e38d&amp;width=918&amp&amp;lang=ru_RU&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A281b38c9af79d5b296ef34d5814250d8e99b8d334faaf9fc4a23ea05c392e987&amp;width=918&amp&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
     <div class="contacts-maps__item">
@@ -99,6 +99,7 @@
       &--blue {
         background-color: #0727e7;
         padding-left: 32rem;
+        padding-right: 12rem;
 
         width: 783px;
       }
@@ -123,6 +124,7 @@
       p {
         font-family: $PTSans;
         font-size: 1.6rem;
+        line-height: 1.4;
       }
 
       a {
