@@ -33,7 +33,7 @@ export const mutations = {
         servicesTitle: i.acf.servicesTitle || i.title.rendered,
         previewText: i.acf.previewText,
         text: i.acf.detailText,
-        isOnSlider: typeof i.acf.isOnSlider !== 'undefined',
+        isOnSlider: !!i.acf.isOnSlider,
         type:  i.acf.type,
         picture: {
           mobile: i.acf.sliderPicture.url
