@@ -58,7 +58,7 @@ module.exports = {
   },
   mode: 'spa',
   axios: {
-    baseURL: 'http://api.xn--80aaaajk8bsm4al1e.xn--p1ai/wp-json/wp/v2/'
+    baseURL: 'https://api.xn--80aaaajk8bsm4al1e.xn--p1ai/wp-json/wp/v2/'
   }
 }
 
