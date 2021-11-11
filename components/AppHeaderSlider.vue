@@ -55,7 +55,7 @@
     },
     computed: {
       swiper() {
-        return this.$refs.swiper.swiper
+        return this.$refs.swiper.swiperInstance
       },
       ...mapGetters({
         _items: 'headerSlider/items'
@@ -71,9 +71,11 @@
     },
     methods: {
       goNext() {
+        console.log(this.swiper)
         this.swiper.slideNext()
       },
       goPrev() {
+        console.log(this.swiper)
         this.swiper.slidePrev()
       },
     }
