@@ -77,16 +77,24 @@
     background-color: var(--bg-color);
     color: var(--color);
     font-family: $bebasNeueBold;
-    font-size: 3rem;
+    font-size: 2rem;
     outline: none;
 
-    padding: 0 10rem;
+    padding: 0 4rem;
 
-    height: 7.6rem;
+    height: 5.6rem;
 
     position: relative;
-    
+
     transition: color .2s, background-color .1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    @media #{$desktop} {
+      font-size: 3rem;
+
+      padding: 0 10rem;
+
+      height: 7.6rem;
+    }
 
     &:hover,
     &:focus {

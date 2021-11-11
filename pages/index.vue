@@ -53,18 +53,23 @@
     }
 
     &__form {
-      padding-left: calc(100vw - var(--banner-width));
       margin-bottom: 12rem;
+
+      @media #{$desktop} {
+        padding-left: calc(100vw - var(--banner-width));
+      }
     }
 
     &__slider {
       width: var(--banner-width);
       height: var(--banner-height);
 
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 3;
+      @media #{$desktop} {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+      }
     }
   }
 

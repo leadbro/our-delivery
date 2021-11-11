@@ -28,8 +28,15 @@
   @import "../assets/mixins.scss";
 
   html:root {
-    --banner-width: calc((1411 / 1903) * 100%);
-    --banner-height: 57.7rem;
+    --banner-width: 100vw;
+    --banner-height: calc(192 * 100vw / 320);
+    --side-padding: 1.6rem;
+
+    @media #{$desktop} {
+      --banner-width: calc((1411 / 1903) * 100%);
+      --banner-height: 57.7rem;
+      --side-padding: 0;
+    }
   }
 
   *,
@@ -53,6 +60,7 @@
 
   #app {
     position: relative;
+    overflow: hidden;
     z-index: 1;
   }
 

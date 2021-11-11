@@ -38,17 +38,27 @@
 
 <style scoped lang="scss">
 @import "../assets/mixins.scss";
-  
+
   .header-nav {
     color: #000;
-    
+
     font-family: $bebasNeue;
     font-size: 2rem;
-    
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+
+    @media #{$desktop} {
+      padding-top: 0;
+    }
+
     &__list {
       padding: 5.2rem 0 0 10.8rem;
       margin: 0;
       list-style: none;
+
+      @media #{$mobile} {
+        display: none;
+      }
     }
 
     &__item {
@@ -57,7 +67,7 @@
         margin-top: 2.8rem;
       }
     }
-    
+
     &__link {
       font-family: inherit;
       color: inherit;
@@ -70,5 +80,5 @@
       }
     }
   }
-  
+
 </style>

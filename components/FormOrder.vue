@@ -15,14 +15,6 @@
       :color-scheme="colorScheme"
     />
 
-    <base-button
-      class="form-order__submit"
-      type="submit"
-      :color-scheme="colorScheme"
-      :disabled="isFormSuccess"
-    >{{buttonText}}
-    </base-button>
-
     <base-checkbox
       class="form-order__checkbox"
       type="submit"
@@ -32,6 +24,15 @@
     >
       Я соглашаюсь на обработку <a href="/" @click.prevent="showPrivacy">персональных данных</a>
     </base-checkbox>
+
+    <base-button
+      class="form-order__submit"
+      type="submit"
+      :color-scheme="colorScheme"
+      :disabled="isFormSuccess"
+    >{{buttonText}}
+    </base-button>
+
   </form>
 </template>
 
@@ -91,24 +92,44 @@
 
   .form-order {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
 
     position: relative;
 
-    &__checkbox {
+    @media #{$desktop} {
+      flex-direction: row;
+    }
 
-      position: absolute;
-      left: 0;
-      bottom: -1rem;
+    &__checkbox {
+      margin-top: .5rem;
+      margin-bottom: 2.4rem;
+
+      @media (--desktop) {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        position: absolute;
+        left: 0;
+        bottom: -1rem;
+      }
     }
 
     &__input {
-      margin-right: 1.8rem;
-      width: 29.3rem;
+      margin-bottom: 2.0rem;
+      width: 100%;
+
+      @media (--desktop) {
+        margin-right: 1.8rem;
+        width: 29.3rem;
+      }
     }
 
     &__submit {
 
+      @media #{$mobile} {
+        width: 100%;
+      }
     }
   }
 

@@ -81,9 +81,13 @@
     }
 
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
 
     cursor: pointer;
+
+    @media #{$desktop} {
+      align-items: center;
+    }
 
     &__input {
       opacity: 0;
@@ -95,7 +99,7 @@
     }
 
     &__checkbox {
-      --checkbox-size: 2.1rem;
+      --checkbox-size: 1.6rem;
 
       border: 0.1rem solid var(--border-color);
 
@@ -108,6 +112,10 @@
 
       transition: border-color .2s ease-in;
 
+      @media (--desktop) {
+        --checkbox-size: 2.1rem;
+      }
+
       &:after {
         content: '';
 
@@ -118,16 +126,24 @@
         border-left: none;
 
         position: absolute;
-        top: calc(50% - .5rem);
-        left: calc(50% - .2rem);
+        top: calc(50% - .7rem);
+        left: calc(50% - .25rem);
 
-        width: 0.5rem;
-        height: 0.8rem;
+        width: 0.6rem;
+        height: 1.0rem;
 
         transform: rotateZ(0deg);
         opacity: 0;
 
         transition: transform .3s, opacity .2s;
+
+        @media #{$desktop} {
+          top: calc(50% - .5rem);
+          left: calc(50% - .2rem);
+
+          width: 0.5rem;
+          height: 0.8rem;
+        }
       }
     }
 
@@ -146,8 +162,14 @@
 
     &__label {
       color: var(--color);
-      font-family: $PTSans;
-      font-size: 1.2rem;
+      font-family: $openSans;
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      font-weight: 600;
+
+      @media #{$desktop} {
+        font-size: 1.2rem;
+      }
 
       a {
         color: inherit;

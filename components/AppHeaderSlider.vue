@@ -89,6 +89,7 @@
   @import "../assets/mixins.scss";
 
   .header-slider {
+    position: relative;
 
     &__swiper {
       height: 100%;
@@ -131,50 +132,21 @@
       height: 100%;
     }
 
-    &__content {
-      color: #fdfeff;
-
-      max-width: calc(100% - 15rem);
-      width: 85rem;
-
-      position: absolute;
-      top: 21.1rem;
-      left: 11.1rem;
-      z-index: 2;
-
-      h2 {
-        font-family: $bebasNeueBold;
-        font-size: 6rem;
-        line-height: 7.5rem;
-        text-transform: uppercase;
-        margin: 0;
-      }
-
-      h3 {
-        font-family: $bebasNeueBold;
-        font-size: 3rem;
-        line-height: 6rem;
-        text-transform: uppercase;
-        margin: 0;
-      }
-
-      p {
-        font-family: $PTSans;
-        font-size: 1.6rem;
-        line-height: 2.6rem;
-        margin: 0;
-      }
-    }
-
     &__navigation {
-      --button-size: 6.7rem;
+      --button-size: 3.2rem;
 
       display: flex;
 
       position: absolute;
       bottom: 0;
-      left: calc(var(--button-size) * -1);
+      left: var(--side-padding);
       z-index: 3;
+
+      @media #{$desktop} {
+        --button-size: 6.7rem;
+
+        left: calc(var(--button-size) * -1);
+      }
     }
 
     &__button {
@@ -192,13 +164,13 @@
       position: relative;
 
       &:before {
-        --arrow-width: 3.2rem;
-        --arrow-height: .7rem;
+        --arrow-width: 1.1rem;
+        --arrow-height: 0.811rem;
 
         content: '';
         display: block;
 
-        background-image: url(~/assets/images/header-slider/arrow-left.png);
+        background-image: url(~/assets/images/header-slider/arrow-left.svg);
         background-size: cover;
 
         width: var(--arrow-width);
@@ -207,6 +179,26 @@
         position: absolute;
         left: calc(50% - var(--arrow-width) / 2);
         top: calc(50% - var(--arrow-height) / 2);
+
+        @media #{$desktop} {
+          --arrow-width: 1.7rem;
+          --arrow-height: 1.26rem;
+        }
+      }
+
+      &--next {
+        right: -.1rem;
+
+        @media #{$desktop} {
+          right: auto;
+        }
+      }
+
+      &--prev {
+
+        @media #{$desktop} {
+          right: .1rem;
+        }
       }
 
       &--next:before {

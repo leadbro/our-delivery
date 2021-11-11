@@ -19,7 +19,7 @@ $pobeda: 'Pobeda-Regular';
 $openSans: 'Open Sans', sans-serif;
 $montserrat: 'Montserrat', sans-serif;
 
-$PTSans: 'PT Sans', sans-serif;
+$PTSans: 'PT Sans Narrow', sans-serif;
 $gothamPro: 'Gotham Pro';
 
 $color-red: #db1727;
@@ -27,3 +27,29 @@ $color-red-2: #ff3e3e;
 $color-red-3: #e01728;
 $color-blue: #00354d;
 $color-azure: #4abeda;
+
+
+// Брекпойнты
+$DESKTOP_WIDTH: 1024px;
+
+$widthDesktop: $DESKTOP_WIDTH;
+
+$mobile: "screen and (max-width: #{$widthDesktop})";
+$desktop: "screen and (min-width: #{$widthDesktop})";
+
+@mixin mobile {
+  @media (max-width: #{$widthDesktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$widthDesktop}) {
+    @content;
+  }
+}
+
+@mixin wrapper {
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}

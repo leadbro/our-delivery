@@ -11,18 +11,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Montserrat:500,600|Open+Sans:400,700&subset=cyrillic-ext"
-      },
     ]
   },
   css: [
     '~/assets/fonts/bebas_neue/style.css',
     '~/assets/fonts/pobeda/WEB/Pobeda-Regular/styles.css',
     '~/assets/fonts/pobeda/WEB/Pobeda-Bold/styles.css',
-    '~/assets/fonts/GothamPro/style.css'
+    '~/assets/fonts/GothamPro/style.css',
+    '~/assets/fonts/pt-sans-narrow/style.css',
+    '~/assets/fonts/open-sans/style.css'
   ],
   plugins: [
     { src: '~/plugins/base-components'},

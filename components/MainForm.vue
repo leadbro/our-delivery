@@ -20,15 +20,23 @@
 
 <style scoped lang="scss">
 @import "../assets/mixins.scss";
-  
+
   .main-form {
+    @include wrapper;
 
     &__title {
       font-family: $bebasNeueBold;
-      font-size: 2.6rem;
-      line-height: 3rem;
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+      margin-top: 3.6rem;
+      margin-bottom: .4rem;
 
-      margin-bottom: 1.5rem;
+      @media #{$desktop} {
+        font-size: 2.6rem;
+        line-height: 3rem;
+
+        margin-bottom: 1.5rem;
+      }
     }
 
     &__form {
@@ -38,5 +46,5 @@
       position: relative;
     }
   }
-  
+
 </style>

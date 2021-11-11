@@ -1,0 +1,13 @@
+/* pt-sans-narrow-regular - latin_cyrillic-ext */
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.woff') format('woff'), /* Modern Browsers */
+       url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('pt-sans-narrow-v12-latin_cyrillic-ext-regular.svg#PTSansNarrow') format('svg'); /* Legacy iOS */
+}

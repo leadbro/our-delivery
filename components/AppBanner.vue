@@ -8,9 +8,9 @@
       />
     </picture>
     <div class="app-banner__content" v-if="isWithText">
-      <h2>{{ title }}</h2>
-      <h3>{{ subtitle }}</h3>
-      <p v-html="text"></p>
+      <h2 class="app-banner__title">{{ title }}</h2>
+      <h3 class="app-banner__subtitle">{{ subtitle }}</h3>
+      <p class="app-banner__text" v-html="text"></p>
     </div>
   </article>
 </template>
@@ -102,35 +102,55 @@
     &__content {
       color: #fdfeff;
 
-      max-width: calc(100% - 15rem);
-      width: 85rem;
-
       position: absolute;
-      top: 21.1rem;
-      left: 11.1rem;
+      top: 3.4rem;
+      left: var(--side-padding);
       z-index: 2;
 
-      h2 {
-        font-family: $bebasNeueBold;
+      @media #{$desktop} {
+        max-width: calc(100% - 15rem);
+        width: 85rem;
+
+        top: 21.1rem;
+        left: 11.1rem;
+      }
+    }
+
+    &__title {
+      font-family: $bebasNeueBold;
+      font-size: 2.6rem;
+      line-height: 120%;
+      text-transform: uppercase;
+      margin: 0;
+      width: 25.5rem;
+
+      @media #{$desktop} {
         font-size: 6rem;
         line-height: 7.5rem;
-        text-transform: uppercase;
-        margin: 0;
       }
+    }
 
-      h3 {
-        font-family: $bebasNeueBold;
+    &__subtitle {
+      font-family: $bebasNeueBold;
+      text-transform: uppercase;
+      margin: 0;
+
+      @media #{$desktop} {
         font-size: 3rem;
         line-height: 6rem;
-        text-transform: uppercase;
-        margin: 0;
       }
+    }
 
-      p {
-        font-family: $PTSans;
+    &__text {
+      font-family: $PTSans;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      margin: 0;
+      width: 20.7rem;
+
+      @media #{$desktop} {
         font-size: 1.6rem;
         line-height: 2.6rem;
-        margin: 0;
       }
     }
   }

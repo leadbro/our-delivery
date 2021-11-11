@@ -88,10 +88,14 @@
     border-bottom: 0.2rem solid var(--border-color);
     background-color: var(--bg-color);
     color: var(--color);
-    font-family: $gothamPro;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    font-family: $openSans;
 
     position: relative;
+
+    @media #{$desktop} {
+      font-size: 1.8rem;
+    }
 
     &--required {
 
@@ -100,18 +104,28 @@
         display: block;
 
         color: #f00b3c;
-        font-family: $gothamPro;
-        font-size: 2.4rem;
+        font-family: inherit;
+        font-size: 1.4rem;
         line-height: 1em;
 
-        width: 1.2rem;
-        height: 1.3rem;
+        width: .8rem;
+        height: .8rem;
 
         position: absolute;
         right: 0;
-        bottom: 1rem;
+        top: 0;
 
         transition: opacity .3s;
+
+        @media #{$desktop} {
+          font-size: 2.4rem;
+
+          width: 1.2rem;
+          height: 1.3rem;
+
+          top: auto;
+          bottom: 1rem;
+        }
       }
     }
 
@@ -126,13 +140,19 @@
       font-size: inherit;
       font-family: inherit;
 
-      padding: .9rem 1.4rem .4rem .5rem;
+      padding: 1.6rem 1.6rem .6rem .8rem;
 
+      height: 3.2rem;
       width: 100%;
-      height: 4.2rem;
 
       position: relative;
       z-index: 2;
+
+      @media #{$desktop} {
+        padding: .9rem 1.4rem .4rem .6rem;
+
+        height: 4.2rem;
+      }
     }
 
     &__placeholder {
@@ -141,15 +161,23 @@
       left: 0;
       z-index: 1;
 
-      transform: translate(.6rem, 1.3rem) scale(1);
+      transform: translate(.8rem, 1.1rem) scale(1);
       transform-origin: 0 0;
 
       transition: transform .3s cubic-bezier(0.215, 0.61, 0.355, 1);;
+
+      @media #{$desktop} {
+        transform: translate(.6rem, 1.3rem) scale(1);
+      }
     }
 
     &__input:focus + &__placeholder,
     &--not-empty &__placeholder {
-      transform: translate(0, 0) scale(.5);
+      transform: translate(0, 0) scale(.6);
+
+      @media #{$desktop} {
+        transform: translate(0, 0) scale(.5);
+      }
     }
 
     &--not-empty:after {

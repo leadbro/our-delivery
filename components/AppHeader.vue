@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__container container">
-      <app-header-nav/>
+      <app-header-nav class="header__nav"/>
       <div class="header__contacts">
         <a href="tel:+74951367399" class="header__contacts-phone">+7 (495) 136-73-99</a>
         <!--<div class="header__contacts-btn">Обратный звонок</div>-->
@@ -28,15 +28,18 @@
   .header {
 
     &__container {
-      display: flex;
-      align-items: flex-start;
 
-      padding-top: 2.8rem;
-      margin-bottom: 2.6rem;
+      @media #{$min1280} {
+        display: flex;
+        align-items: flex-start;
 
-      max-width: 158.5rem;
+        padding-top: 2.8rem;
+        margin-bottom: 2.6rem;
 
-      height: var(--banner-height);
+        height: var(--banner-height);
+
+        max-width: 158.5rem;
+      }
     }
 
     &__contacts {
@@ -47,6 +50,10 @@
 
       position: relative;
       z-index: 10;
+
+      @media #{$mobile} {
+        display: none;
+      }
 
       &-phone {
         color: #fdfeff;
