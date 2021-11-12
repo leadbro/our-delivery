@@ -28,15 +28,21 @@
     background-color: rgba(255,255,255,0);
     color: #fbfbfb;
     font-family: $bebasNeueBold;
-    font-size: 2.4rem;
-    line-height: 3rem;
+    font-size: 1.6rem;
+    line-height: 1em;
 
-    padding: 1.3rem;
-    padding-right: 16rem;
-
-    height: 5rem;
+    padding: .4rem 0;
 
     position: relative;
+
+    @media #{$desktop} {
+      font-size: 2.4rem;
+      line-height: 3rem;
+
+      padding: 1.3rem 0;
+
+      height: 5rem;
+    }
 
     &:after {
       content: '';

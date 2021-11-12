@@ -40,18 +40,28 @@
     font-size: 1.4rem;
 
     &__list {
-      display: flex;
-      align-items: flex-end;
 
       padding: 0;
       margin: 0;
       list-style: none;
+
+      @media #{$desktop} {
+        display: flex;
+        align-items: flex-end;
+      }
     }
 
     &__item {
 
       & + & {
-        margin-left: 1.4rem;
+
+        @media #{$mobile} {
+          margin-top: 20px;
+        }
+
+        @media #{$desktop} {
+          margin-left: 1.4rem;
+        }
       }
     }
 

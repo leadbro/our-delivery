@@ -47,23 +47,39 @@
 
   .our-services-layer-bottom {
     display: flex;
+    flex-direction: column;
     overflow: hidden;
 
+    @media #{$desktop} {
+      flex-direction: row;
+    }
+
     &__square {
-      /*background-color: #f00b3c;*/
-      height: 100%;
+      height: 111vw;
 
       transition: background-color .4s ease-out;
+
+      @media #{$desktop} {
+        height: 100%;
+      }
     }
 
     &__square,
     &__swiper {
       flex-shrink: 0;
-      width: 50%;
+      width: 100%;
+
+      @media #{$desktop} {
+        width: 50%;
+      }
     }
 
     &__picture {
-      height: 100%;
+      height: 97vw;
+
+      @media #{$desktop} {
+        height: 100%;
+      }
 
       img {
         object-fit: cover;

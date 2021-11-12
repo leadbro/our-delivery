@@ -8,7 +8,7 @@
         >
           Перевозки по России быстро и надежно
         </base-title>
-        <picture class="about-us__picture-left">
+        <picture class="about-us__picture about-us__picture--rocket about-us__picture--desktop">
           <img src="/images/about-us/rocket.jpg?v=1" alt="">
         </picture>
       </div>
@@ -23,7 +23,10 @@
           </p>
           <h3 class="about-us__text-title about-us__text-title--blue">Потому что НАША!</h3>
         </div>
-        <picture class="about-us__picture-right">
+        <picture class="about-us__picture about-us__picture--rocket about-us__picture--mobile">
+          <img src="/images/about-us/rocket.jpg?v=1" alt="">
+        </picture>
+        <picture class="about-us__picture about-us__picture--truck about-us__picture--right">
           <img src="/images/about-us/truck.jpg" alt="">
         </picture>
       </div>
@@ -49,45 +52,132 @@
   @import "../assets/mixins.scss";
 
   .about-us {
-    padding-top: 9rem;
+    width: 100%;
+
+    @media #{$desktop} {
+      padding-top: 9rem;
+    }
 
     &__container {
-      display: flex;
-      padding-right: 14rem;
+
+      @media #{$desktop} {
+        display: flex;
+        flex-direction: row;
+        padding-right: 14rem;
+      }
     }
 
     &__col-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
 
-      flex-shrink: 0;
-      margin-left: auto;
+      @media #{$desktop} {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
-      width: 52.4rem;
+        flex-shrink: 0;
+        margin-left: auto;
+
+        width: 52.4rem;
+      }
+    }
+
+    &__col-title {
+      padding-left: 5.6rem;
     }
 
     &__title {
-      max-width: 54rem;
+      max-width: 100%;
+      margin-bottom: 8.0rem;
 
-      margin-left: 6.8rem;
-      margin-bottom: 25rem;
+      @media #{$desktop} {
+        max-width: 54rem;
+
+        margin-left: 6.8rem;
+        margin-bottom: 25rem;
+      }
     }
 
     &__text {
+      color: #838383;
       font-family: $openSans;
       font-size: 1.4rem;
-      line-height: 2.4rem;
+      font-weight: 600;
+      line-height: 2.1rem;
+
+      @media #{$mobile} {
+        padding-right: var(--side-padding);
+      }
+
+      @media #{$desktop} {
+        line-height: 2.4rem;
+      }
 
       &-title {
+        color: black;
         font-family: $bebasNeueBold;
-        font-size: 3rem;
+        font-size: 2.2rem;
 
         margin-bottom: 1rem;
 
+        @media #{$mobile} {
+          margin-top: 3.2rem;
+          margin-bottom: 1.8rem;
+        }
+
+        @media #{$desktop} {
+          font-size: 3rem;
+        }
+
         &--blue {
           color: #1935c5;
-          margin-bottom: 10rem;
+          margin-bottom: 2.6rem;
+
+          @media #{$desktop} {
+            margin-bottom: 10rem;
+          }
+        }
+      }
+    }
+
+    &__picture {
+
+      @media #{$mobile} {
+        max-width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &--mobile {
+        display: block;
+
+        @media #{$desktop} {
+          display: none;
+        }
+      }
+
+      &--desktop {
+        display: none;
+
+        @media #{$desktop} {
+          display: block;
+        }
+      }
+
+      &--rocket {
+
+        @media #{$mobile} {
+          width: 42.5vw;
+        }
+      }
+
+      &--truck {
+
+        @media #{$mobile} {
+          margin-top: -5.4rem;
+          margin-left: auto;
+          width: 70vw;
         }
       }
     }

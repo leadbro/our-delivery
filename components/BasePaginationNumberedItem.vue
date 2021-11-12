@@ -45,7 +45,14 @@ export default {
   },
   methods: {
     init() {
-      this.size = parseFloat(getComputedStyle(this.$el).getPropertyValue('--pagination-item-size'));
+      const styles = getComputedStyle(this.$el)
+      const tabletSize = parseFloat(styles.getPropertyValue('--pagination-item-tablet-size'));
+
+      if (tabletSize) {
+        this.size = tabletSize
+      } else {
+        this.size = parseFloat(styles.getPropertyValue('--pagination-item-size'));
+      }
 
       if (this.isCurrent) {
         this.start();
@@ -82,7 +89,7 @@ export default {
 @import "../assets/mixins.scss";
 
 .base-pagination-numbered-item {
-  --pagination-item-size: 3.8rem;
+  --pagination-item-size: 2.8rem;
 
   display: flex;
   align-items: center;
@@ -94,13 +101,24 @@ export default {
   color: #fff;
 
   font-family: $montserrat;
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 1.2rem;
 
   width: var(--pagination-item-size);
   height: var(--pagination-item-size);
 
   position: relative;
+
+  @media #{$tablet} {
+    // Увеличиваем в 2 раза для планшета
+    --pagination-item-tablet-size: 5.6rem;
+  }
+
+  @media #{$desktop} {
+    --pagination-item-size: 3.8rem;
+
+    font-size: 1.8rem;
+  }
 
   &__progress {
     position: absolute;

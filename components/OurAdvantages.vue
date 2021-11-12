@@ -40,18 +40,23 @@
   .our-advantages {
 
     &__list {
-      display: flex;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      display: grid;
+      column-gap: 1.6rem;
+      row-gap: 2.4rem;
+      grid-template-columns: 50% 50%;
 
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @media #{$desktop} {
+        grid-template-columns: repeat(5, 20%);
+      }
     }
 
     &__item {
       flex-shrink: 0;
-      width: 20%;
+      width: 100%;
     }
   }
 

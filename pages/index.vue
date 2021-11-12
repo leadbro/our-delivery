@@ -45,18 +45,27 @@
   .page-index {
 
     &__advantages {
-      margin-bottom: 10rem;
+      margin-bottom: 8rem;
+
+      @media #{$desktop} {
+        margin-bottom: 10rem;
+      }
     }
 
     &__about-us {
-      margin-bottom: 18rem;
+      margin-bottom: 7.0rem;
+
+      @media #{$desktop} {
+        margin-bottom: 18rem;
+      }
     }
 
     &__form {
-      margin-bottom: 12rem;
+      margin-bottom: 5.1rem;
 
       @media #{$desktop} {
         padding-left: calc(100vw - var(--banner-width));
+        margin-bottom: 12rem;
       }
     }
 

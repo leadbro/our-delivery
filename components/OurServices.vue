@@ -7,7 +7,7 @@
     />
     <our-services-layer-top
         class="our-services__layer-top"
-        :items="_items"
+        :items="items"
         v-if="_item"
         :speed="speed"
         :current-item-index="currentItemIndex"
@@ -36,13 +36,16 @@
         getItemById: 'services/getItemById',
       }),
       _item() {
-        return this._items[this.currentItemIndex]
+        return this.items[this.currentItemIndex]
       },
+      items() {
+        return this._items
+      }
     },
     methods: {
       slideNext() {
         let nextSlideId = this.currentItemIndex + 1;
-        this.currentItemIndex = nextSlideId >= this._items.length ? 0 : nextSlideId;
+        this.currentItemIndex = nextSlideId >= this.items.length ? 0 : nextSlideId;
 
         return nextSlideId;
       },
@@ -99,10 +102,13 @@
     }
 
     &__layer-top {
-      height: 93rem;
-
+      height: 206vw;
       position: relative;
       z-index: 2;
+
+      @media #{$desktop} {
+        height: 93rem;
+      }
     }
 
 

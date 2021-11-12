@@ -1,7 +1,5 @@
 <template>
-  <li
-      class="our-advantages-item__item"
-  >
+  <li class="our-advantages-item__item">
     <i class="our-advantages-item__icon">
       <img :src="_item.icon"/>
     </i>
@@ -45,28 +43,45 @@
 
     &__icon {
       display: block;
+      height: 5.6rem;
+      width: 5.6rem;
 
-      width: 7rem;
-      height: 9.8rem;
+      margin-bottom: 2.2rem;
 
       img {
         width: 100%;
+      }
+
+      @media #{$desktop} {
+        margin-bottom: 0;
+        width: 7rem;
+        height: 9.8rem;
       }
     }
 
     &__title {
       color: #081305;
       font-family: $openSans;
-      line-height: 2.8rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
       font-weight: 600;
-      font-size: 1.8rem;
       text-transform: uppercase;
+
+      @media #{$mobile} {
+        margin-bottom: -.3rem;
+      }
+
+      @media #{$desktop} {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+      }
     }
 
     &__text {
       color: #858585;
       font-family: $openSans;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
     }
   }
 

@@ -39,21 +39,36 @@
   @import "../assets/mixins.scss";
 
   .footer {
-    height: 20.5rem;
-    background-color: #081305;
+    background-color: #050713;
+
+    @media #{$desktop} {
+      height: 20.5rem;
+    }
 
     &__container {
       margin: 0 auto;
       max-width: 100%;
-      width: 153.5rem;
 
-      padding-top: 1.6rem;
+      padding-top: 4rem;
       padding-bottom: 4rem;
+
+      @media #{$mobile} {
+        @include wrapper;
+      }
+
+      @media #{$desktop} {
+        padding-top: 1.6rem;
+        padding-bottom: 4rem;
+        width: 153.5rem;
+      }
     }
 
     &__top {
-      display: flex;
       margin-bottom: 3rem;
+
+      @media #{$desktop} {
+        display: flex;
+      }
     }
 
     &__bottom {
@@ -62,11 +77,17 @@
         padding: 0;
         margin: 0;
         list-style-type: none;
-        display: flex;
+
+        @media #{$desktop} {
+          display: flex;
+        }
       }
 
       &-item {
-        margin-right: 1.4rem;
+
+        @media #{$desktop} {
+          margin-right: 1.4rem;
+        }
       }
 
       &-span {
@@ -87,16 +108,25 @@
         text-decoration: underline;
         // Text style for "Политика к"
         letter-spacing: 0.035rem;
+
+        @media #{$mobile} {
+          margin-top: 1.0rem;
+          padding: 0;
+        }
       }
     }
-    
+
     &__logo {
       color: #fff;
     }
 
     &__nav {
       margin-left: auto;
-      padding-top: 5.4rem;
+      padding-top: 4.4rem;
+
+      @media #{$desktop} {
+        padding-top: 5.4rem;
+      }
     }
   }
 

@@ -49,6 +49,10 @@
     background-color: #081305;
     font-size: 10px;
     position: relative;
+
+    @media #{$tablet} {
+      font-size: 20px !important;
+    }
   }
 
   body {

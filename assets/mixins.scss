@@ -30,14 +30,23 @@ $color-azure: #4abeda;
 
 
 // Брекпойнты
-$DESKTOP_WIDTH: 1024px;
+$TABLET_WIDTH: 768px;
+$DESKTOP_WIDTH: 1280px;
 
+$widthTablet: $TABLET_WIDTH;
 $widthDesktop: $DESKTOP_WIDTH;
 
 $mobile: "screen and (max-width: #{$widthDesktop})";
+$tablet: "screen and (min-width: #{$widthTablet}) and (max-width: #{$widthDesktop})";
 $desktop: "screen and (min-width: #{$widthDesktop})";
 
 @mixin mobile {
+  @media (max-width: #{$widthDesktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
   @media (max-width: #{$widthDesktop - 1px}) {
     @content;
   }
