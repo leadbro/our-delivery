@@ -7,7 +7,7 @@
     />
     <our-services-layer-top
         class="our-services__layer-top"
-        :items="items"
+        :items="_items"
         v-if="_item"
         :speed="speed"
         :current-item-index="currentItemIndex"
@@ -36,16 +36,13 @@
         getItemById: 'services/getItemById',
       }),
       _item() {
-        return this.items[this.currentItemIndex]
+        return this._items[this.currentItemIndex]
       },
-      items() {
-        return this._items
-      }
     },
     methods: {
       slideNext() {
         let nextSlideId = this.currentItemIndex + 1;
-        this.currentItemIndex = nextSlideId >= this.items.length ? 0 : nextSlideId;
+        this.currentItemIndex = nextSlideId >= this._items.length ? 0 : nextSlideId;
 
         return nextSlideId;
       },
@@ -82,7 +79,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   @import "../assets/mixins.scss";
 
   .our-services {

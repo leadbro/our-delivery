@@ -24,9 +24,9 @@ module.exports = {
   plugins: [
     { src: '~/plugins/base-components'},
     { src: '~/plugins/vue-scroll-to'},
-    { src: '~/plugins/vue-js-modal'},
-    { src: '~/plugins/vue-google-maps', ssr: false },
-    { src: '~/plugins/vue-awesome-swiper', ssr: false }
+    { src: '~/plugins/vue-js-modal', mode: 'client' },
+    { src: '~/plugins/vue-google-maps', mode: 'client' },
+    { src: '~/plugins/vue-awesome-swiper', mode: 'client' }
   ],
   modules: [
     '@nuxtjs/axios',
@@ -52,8 +52,24 @@ module.exports = {
     //     })
     //   }
     // }
+    postcss: {
+      plugins: {
+        'postcss-css-variables': false
+      }
+    },
+    extractCSS: true
   },
-  mode: 'spa',
+  buildModules: [
+    '@nuxt/postcss8'
+  ],
+  router: {
+    base: '/our-delivery/'
+  },
+  target: 'static',
+  ssr: false,
+  loadingIndicator: {
+      name: 'pulse',
+  },
   axios: {
     baseURL: 'https://api.xn--80aaaajk8bsm4al1e.xn--p1ai/wp-json/wp/v2/'
   }

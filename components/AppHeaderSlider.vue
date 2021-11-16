@@ -71,21 +71,16 @@
     },
     methods: {
       goNext() {
-        console.log(this.swiper)
         this.swiper.slideNext()
       },
       goPrev() {
-        console.log(this.swiper)
         this.swiper.slidePrev()
       },
     }
   }
 </script>
 
-<style
-  lang="scss"
-  scoped
->
+<style lang="scss">
   @import "../assets/mixins.scss";
 
   .header-slider {

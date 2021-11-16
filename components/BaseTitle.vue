@@ -1,7 +1,5 @@
 <template>
-  <h2
-      class="base-title"
-  >
+  <h2 class="base-title">
     <img
         v-if="imageSrc"
         :src="imageSrc"

@@ -55,7 +55,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../assets/mixins.scss";
 
   .page-tariffs {
