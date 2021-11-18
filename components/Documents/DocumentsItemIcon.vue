@@ -41,10 +41,15 @@
   .documents-item-icon {
     display: block;
 
-    width: 5.5rem;
-    height: 7.7rem;
+    width: 3.2rem;
+    height: 4.6rem;
 
     object-fit: cover;
+
+    @media #{$desktop} {
+      width: 5.5rem;
+      height: 7.7rem;
+    }
   }
 
 

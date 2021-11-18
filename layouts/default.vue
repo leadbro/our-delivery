@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-mobile-menu />
     <app-header/>
     <nuxt/>
     <app-footer/>
@@ -12,14 +13,16 @@
   import "~/assets/blocks";
 
   import AppHeader from "~/components/AppHeader"
+  import AppMobileMenu from "~/components/AppMobileMenu"
   import AppFooter from "~/components/AppFooter"
   import PrivacyPolicyModal from "~/components/PrivacyPolicyModal"
 
   export default {
     components: {
       AppHeader,
+      AppMobileMenu,
       AppFooter,
-      PrivacyPolicyModal
+      PrivacyPolicyModal,
     }
   }
 </script>

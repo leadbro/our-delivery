@@ -7,10 +7,10 @@
         :alt="title"
       />
     </picture>
-    <div class="app-banner__content" v-if="isWithText">
+    <div class="app-banner__content" v-if="isWithText" :class="contentClasses">
       <h2 class="app-banner__title">{{ title }}</h2>
-      <h3 class="app-banner__subtitle">{{ subtitle }}</h3>
-      <p class="app-banner__text" v-html="text"></p>
+      <h3 v-if="subtitle" class="app-banner__subtitle">{{ subtitle }}</h3>
+      <p v-if="text" class="app-banner__text" v-html="text"></p>
     </div>
   </article>
 </template>
@@ -22,7 +22,16 @@
     data() {
       return {}
     },
-    computed: {},
+    computed: {
+      isCentered() {
+        return !this.subtitle && !this.text
+      },
+      contentClasses() {
+        return {
+          'app-banner__content--centered': this.isCentered
+        }
+      }
+    },
     methods: {},
     props: {
       title: {
@@ -121,6 +130,19 @@
 
         top: 10.6rem;
         left: 18.1rem;
+      }
+
+      &--centered {
+        display: flex;
+        justify-content: center;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+
+        @media #{$mobile} {
+          justify-content: flex-start;;
+          align-items: center;
+        }
       }
     }
 

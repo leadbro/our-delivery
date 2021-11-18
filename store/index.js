@@ -1,5 +1,5 @@
 export const state = () => ({
-  privacyPolicy: ''
+  privacyPolicy: '',
 });
 
 export const getters = {
@@ -13,6 +13,7 @@ export const mutations = {
   setPrivacyPolicy(state, payload) {
     state.privacyPolicy = payload.content.rendered
   },
+
 };
 
 export const actions = {

@@ -50,23 +50,39 @@
     background-repeat: no-repeat;
     background-position: center bottom;
 
-    padding-top: 9rem;
+    padding-top: 5rem;
     padding-bottom: 62rem;
 
     position: relative;
 
+    @media #{$desktop} {
+      padding-top: 9rem;
+      padding-bottom: 62rem;
+    }
+
     &__container {
-      padding: 0 7rem;
+      padding: 0 0rem;
+
+      @media #{$desktop} {
+        padding: 0 7rem;
+      }
     }
 
     &__header {
-      display: flex;
-      padding-left: 7.7rem;
+      margin-bottom: 4.6rem;
 
-      margin-bottom: 10rem;
+      @media #{$desktop} {
+        display: flex;
+        padding-left: 7.7rem;
+        margin-bottom: 10rem;
+      }
 
       &-title {
 
+
+        @media #{$mobile} {
+          margin-left: 6.6rem;
+        }
       }
 
       &-text {
@@ -74,21 +90,37 @@
 
         font-family: $openSans;
         font-size: 1.8rem;
-        line-height: 3rem;
+        line-height: 2.7rem;
 
-        padding-top: 6rem;
+        @media #{$desktop} {
+          font-size: 1.8rem;
+          line-height: 3rem;
 
-        margin-left: auto;
-        width: 66.6rem;
+          padding-top: 6rem;
+
+          margin-left: auto;
+          width: 66.6rem;
+        }
       }
     }
 
     &__content {
-      display: flex;
+
+      @media #{$desktop} {
+        display: flex;
+      }
 
       &-picture {
-        width: 52.9rem;
-        height: 46.1rem;
+        width: 100%;
+
+        @media #{$mobile} {
+          margin-bottom: 55px;
+        }
+
+        @media #{$desktop} {
+          width: 52.9rem;
+          height: 46.1rem;
+        }
 
         img {
           height: 100%;
@@ -100,9 +132,17 @@
 
       &-title {
         font-family: $bebasNeueBold;
-        font-size: 3rem;
+        font-size: 2.2rem;
 
         margin-bottom: 1rem;
+
+        @media #{$mobile} {
+          margin-top: 6.6rem;
+        }
+
+        @media #{$desktop} {
+          font-size: 3rem;
+        }
       }
 
       &-text {
@@ -110,10 +150,14 @@
 
         font-family: $openSans;
         font-size: 1.4rem;
-        line-height: 2.4rem;
+        line-height: 2.1rem;
 
-        margin-left: auto;
-        width: 66.6rem;
+        @media #{$desktop} {
+          line-height: 2.4rem;
+
+          margin-left: auto;
+          width: 66.6rem;
+        }
 
         :first-child {
           margin-top: 0;

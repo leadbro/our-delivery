@@ -78,19 +78,33 @@
   .services-item {
     display: flex;
 
+    @media #{$mobile} {
+      flex-direction: column;
+    }
+
     &__icon {
       display: block;
 
       flex-shrink: 0;
-      width: 6rem;
-      height: 6rem;
+      width: 3.9rem;
+      height: 3.9rem;
 
       object-fit: contain;
+
+      @media #{$desktop} {
+        width: 6rem;
+        height: 6rem;
+      }
     }
 
     &__content {
       padding-top: .6rem;
-      padding-left: 1.8rem;
+      padding-left: 0;
+
+      @media #{$desktop} {
+        padding-top: .6rem;
+        padding-left: 1.8rem;
+      }
     }
 
     &__expand-area {
@@ -112,17 +126,34 @@
 
     &__title {
       font-family: $bebasNeueBold;
-      font-size: 3rem;
-      line-height: 6rem;
+      font-size: 2rem;
+      line-height: 4.2rem;
       text-transform: uppercase;
 
       margin: 0;
+
+      @media #{$mobile} {
+        margin-bottom: .4rem;
+      }
+
+      @media #{$desktop} {
+        font-size: 3rem;
+        line-height: 6rem;
+      }
     }
 
     &__text {
       font-family: $openSans;
       font-size: 1.4rem;
-      line-height: 2.6rem;
+      line-height: 1.9rem;
+
+      @media #{$mobile} {
+        padding-right: 2.0rem;
+      }
+
+      @media #{$desktop} {
+        line-height: 2.6rem;
+      }
 
       ul {
         padding-left: 1.6rem;
@@ -152,6 +183,10 @@
     &__button {
       margin-top: 3rem;
       margin-bottom: 2rem;
+
+      @media #{$mobile} {
+        width: 100%;
+      }
     }
 
     &__readmore-button {
@@ -171,21 +206,36 @@
 
       transition: border-bottom-color .5s;
 
+      @media #{$mobile} {
+        margin-top: 1.4rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
+
       &:after {
         content: '';
         display: block;
 
         background-image: url('/images/icons/arrow.svg');
         background-repeat: no-repeat;
+        background-size: contain;
 
-        width: 1.2rem;
-        height: 0.8rem;
+        width: 0.9rem;
+        height: 0.5rem;
 
         position: absolute;
         right: -1.8rem;
-        top: .4rem;
+        top: .6rem;
 
         transition: transform .5s;
+
+        @media #{$mobile} {
+          height: .7rem;
+          width: .7rem;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -1.8rem;
+        }
       }
 
       &--expanded {
@@ -193,6 +243,10 @@
 
         &:after {
           transform: rotateZ(180deg);
+
+          @media #{$mobile} {
+            transform: rotateZ(180deg) translateY(50%);
+          }
         }
       }
     }

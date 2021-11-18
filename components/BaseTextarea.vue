@@ -68,11 +68,15 @@
     border-bottom: 0.2rem solid #0000ff;
     background-color: #fff;
     color: #181818;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 
     padding-top: 1.4rem;
 
     position: relative;
+
+    @media #{$desktop} {
+      font-size: 1.8rem;
+    }
 
     &--required {
 
@@ -110,11 +114,15 @@
       resize: none;
 
       width: 100%;
-      height: 15rem;
+      height: 11.5rem;
 
       overflow: auto;
       position: relative;
       z-index: 2;
+
+      @media #{$desktop} {
+        height: 15rem;
+      }
     }
 
     &__placeholder {

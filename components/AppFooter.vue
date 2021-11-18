@@ -57,9 +57,9 @@
       }
 
       @media #{$desktop} {
-        padding-top: 1.6rem;
-        padding-bottom: 4rem;
-        width: 153.5rem;
+        padding-top: 3em;
+        padding-bottom: 3rem;
+        width: calc(100vw - 10rem);
       }
     }
 
@@ -106,7 +106,6 @@
         font-size: 1.4rem;
         line-height: 1.9rem;
         text-decoration: underline;
-        // Text style for "Политика к"
         letter-spacing: 0.035rem;
 
         @media #{$mobile} {
@@ -125,7 +124,7 @@
       padding-top: 4.4rem;
 
       @media #{$desktop} {
-        padding-top: 5.4rem;
+        padding-top: 2.2rem;
       }
     }
   }

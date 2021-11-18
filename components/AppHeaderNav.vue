@@ -1,6 +1,7 @@
 <template>
   <nav class="header-nav">
     <app-logo class="header-nav__logo"/>
+
     <ul class="header-nav__list">
       <li
           v-for="item in _items"
@@ -15,6 +16,8 @@
         </nuxt-link>
       </li>
     </ul>
+
+    <app-burger-button class="header-nav__button" />
   </nav>
 </template>
 
@@ -22,11 +25,13 @@
   import { mapGetters } from 'vuex';
 
   import AppLogo from '~/components/AppLogo.vue'
+  import AppBurgerButton from '~/components/AppBurgerButton.vue'
 
   export default {
     name: 'AppHeaderNav',
     components: {
-      AppLogo
+      AppLogo,
+      AppBurgerButton,
     },
     computed: {
       ...mapGetters({
@@ -46,6 +51,11 @@
     font-size: 1.6rem;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
+
+    @media #{$mobile} {
+      display: flex;
+      justify-content: space-between;
+    }
 
     @media #{$desktop} {
       padding-top: 0;
@@ -77,6 +87,16 @@
       &:hover,
       &:focus {
         text-decoration: underline;
+      }
+    }
+
+    &__button {
+      position: relative;
+      right: -.5rem;
+      top: .4rem;
+
+      @media #{$desktop} {
+        display: none;
       }
     }
   }

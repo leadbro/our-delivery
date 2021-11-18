@@ -8,8 +8,12 @@
       />
     </div>
     <picture class="banner-form__picture">
+      <source
+        srcset="/images/banner-form/bg-desktop.jpg"
+        media="(min-width: 1280px)"
+      >
       <img
-        src="/images/banner-form/bg-desktop.jpg"
+        src="/images/banner-form/bg-mobile.jpg"
         alt="Заказать доставку"
       >
     </picture>
@@ -36,6 +40,12 @@
     position: relative;
     z-index: 1;
 
+    @media #{$mobile} {
+      height: auto;
+      padding-top: 5.6rem;
+      padding-bottom: 5.6rem;
+    }
+
     &__container {
       position: relative;
       z-index: 2;
@@ -49,6 +59,11 @@
 
       margin-top: 0;
       margin-bottom: 6.2rem;
+
+      @media #{$mobile} {
+        font-size: 3.0rem;
+        margin-bottom: 3.4rem;
+      }
     }
 
     &__form {

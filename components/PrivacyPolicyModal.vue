@@ -42,8 +42,22 @@
   @import "../assets/mixins.scss";
 
   .privacy-policy {
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+
+    @media #{$mobile} {
+
+      .vm--modal {
+        left: 5% !important;
+        width: 90% !important;
+      }
+    }
+
+    @media #{$desktop} {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+    }
 
     &__cross {
       background: none;
@@ -93,12 +107,20 @@
       font-size: 1.6rem;
       line-height: 2.6rem;
 
-      padding: 4rem;
+      padding: 2rem;
+
+      @media #{$desktop} {
+        padding: 4rem;
+      }
 
       h2 {
         text-transform: uppercase;
         font-family: $bebasNeueBold;
-        font-size: 2.8em;
+        font-size: 1.8em;
+
+        @media #{$desktop} {
+          font-size: 2.8em;
+        }
       }
 
       ul {

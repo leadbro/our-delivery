@@ -2,7 +2,7 @@
   <div class="page-index">
     <app-header-slider class="page-index__slider"/>
 
-    <main-form class="page-index__form"/>
+    <main-form id="order" class="page-index__form"/>
 
     <our-advantages class="page-index__advantages"/>
 

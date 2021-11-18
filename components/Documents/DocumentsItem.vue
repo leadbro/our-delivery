@@ -58,9 +58,13 @@
 
     border-bottom: 0.1rem dashed #c6c6c6;
 
-    padding-bottom: 2.7rem;
+    padding-bottom: 1.7rem;
 
     position: relative;
+
+    @media #{$desktop} {
+      padding-bottom: 2.7rem;
+    }
 
     &__icon {
 
@@ -81,10 +85,22 @@
 
     &__text {
       font-family: $openSans;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
 
-      padding-top: 2.6rem;
-      padding-left: 3.2rem;
+      padding-top: 0rem;
+      padding-left: 2.2rem;
+
+      @media #{$mobile} {
+        line-height: 1.9rem;
+        padding-right: 2.0rem;
+      }
+
+      @media #{$desktop} {
+        font-size: 1.8rem;
+
+        padding-top: 2.6rem;
+        padding-left: 3.2rem;
+      }
     }
 
     &__title {

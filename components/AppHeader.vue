@@ -12,13 +12,26 @@
 
 <script>
   import AppHeaderNav from '~/components/AppHeaderNav';
+  import Headroom from 'headroom.js'
 
   export default {
     name: 'AppHeader',
+    data() {
+      return {
+        headroom: null
+      }
+    },
     components: {
       AppHeaderNav,
     },
-    computed: {}
+    computed: {},
+    mounted() {
+      this.headroom = new Headroom(this.$el)
+
+      if (!this.headroom.initialized) {
+        this.headroom.init()
+      }
+    }
   }
 </script>
 
@@ -26,10 +39,37 @@
   @import "../assets/mixins.scss";
 
   .header {
+    background: white;
+
+
+    @media #{$mobile} {
+
+      &.headroom {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        will-change: transform;
+        transition: transform 200ms linear;
+
+        & + div {
+          position: relative;
+          margin-top: 7.2rem;
+        }
+      }
+
+      &.headroom--pinned {
+        transform: translateY(0%);
+      }
+
+      &.headroom--unpinned {
+        transform: translateY(-100%);
+      }
+    }
 
     &__container {
 
-      @media #{$min1280} {
+      @media #{$desktop} {
         display: flex;
         align-items: flex-start;
 

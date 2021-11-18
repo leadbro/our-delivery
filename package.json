@@ -14,12 +14,14 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "headroom.js": "^0.12.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.8",
     "sass": "^1.43.4",
     "sass-loader": "10.1.1",
     "swiper": "5.4.3",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-burger-menu": "^2.0.5",
     "vue-js-modal": "^2.0.1",
     "vue-scrollto": "^2.20.0",
     "vue2-google-maps": "^0.10.7"

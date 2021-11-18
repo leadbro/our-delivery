@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="contacts-maps__item">
-      <div class="contacts-maps__map" style="width: 783px;  height: 689px">
+      <div class="contacts-maps__map" style="width: 783px;  height: 702px">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adb624cc4442a1dca38f7732a4f575ed14503ba67b8dd4a9ca4819a7a5fc4686e&amp;width=783&amp&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
 
@@ -73,17 +73,28 @@
 
     &__item {
       display: flex;
+
+      @media #{$mobile} {
+        flex-direction: column;
+      }
     }
 
     &__title {
       color: #fdfeff;
       font-family: $bebasNeueBold;
-      font-size: 5.5rem;
-      line-height: 7.5rem;
+      font-size: 3rem;
+      line-height: 3rem;
       text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 5.5rem;
 
-      margin-top: 11rem;
-      margin-bottom: 2rem;
+      @media #{$desktop} {
+        font-size: 5.5rem;
+        line-height: 7.5rem;
+
+        margin-top: 11rem;
+        margin-bottom: 2rem;
+      }
     }
 
     &__text {
@@ -91,41 +102,98 @@
 
       color: #fdfeff;
 
-      padding-bottom: 9rem;
+      padding-bottom: 2rem;
+
+      @media #{$mobile} {
+        padding-left: var(--side-padding);
+        padding-right: var(--side-padding);
+        padding-top: 68px;
+      }
+
+      @media #{$desktop} {
+        padding-bottom: 9rem;
+        //max-width: 50%;
+      }
 
       &--blue {
         background-color: #0727e7;
-        padding-left: 32rem;
-        padding-right: 12rem;
 
-        width: 783px;
+        @media #{$desktop} {
+          padding-left: 32rem;
+          padding-right: 12rem;
+
+          width: 78.3rem;
+        }
       }
 
       &--red {
         background-color: #f00b3c;
-        padding-left: 9.7rem;
 
-        width: 918px;
+        @media #{$mobile} {
+          order: -1;
+        }
+
+        @media #{$desktop} {
+          padding-left: 9.7rem;
+
+          width: 91.8rem;
+        }
       }
 
       h4 {
         font-family: $bebasNeue;
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 400;
         letter-spacing: 0.03rem;
         text-transform: uppercase;
 
-        margin-bottom: 1rem;
+        margin-bottom: 0rem;
+
+        @media #{$desktop} {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
       }
 
       p {
-        font-family: $PTSans;
-        font-size: 1.6rem;
-        line-height: 1.4;
+        font-family: $openSans;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+
+        @media #{$mobile} {
+          margin-top: 1.0rem;
+          margin-bottom: 3.4rem;
+        }
+
+        @media #{$desktop} {
+          font-size: 1.6rem;
+          line-height: 1.4;
+        }
       }
 
       a {
         color: inherit
+      }
+    }
+
+    &__map {
+
+      @media #{$mobile} {
+        height: calc(200vw/3.2) !important;
+        width: 100vw !important;
+      }
+
+      @media #{$desktop} {
+        width: 100% !important;
+
+        @media #{$ipadPro} {
+          max-width: 50%;
+        }
+      }
+
+      & > ymaps {
+        height: 100% !important;
+        width: 100% !important;
       }
     }
   }

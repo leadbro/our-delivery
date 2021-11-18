@@ -43,11 +43,20 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media #{$mobile} {
+      flex-direction: column;
+    }
+
     &__item {
       margin-right: 10rem;
       margin-bottom: 3.2rem;
 
       width: calc(50% - 20rem);
+
+      @media #{$mobile} {
+        margin-bottom: 6.8rem;
+        width: 100%;
+      }
     }
   }
 

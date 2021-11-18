@@ -24,17 +24,22 @@
   .main-form {
     @include wrapper;
 
+    @media #{$mobile} {
+      padding-top: 3.6rem;
+    }
+
     &__title {
       font-family: $bebasNeueBold;
       font-size: 1.6rem;
       line-height: 1.6rem;
-      margin-top: 3.6rem;
+      margin-top: 0;
       margin-bottom: .4rem;
 
       @media #{$desktop} {
         font-size: 2.6rem;
         line-height: 3rem;
 
+        margin-top: 3.6rem;
         margin-bottom: 1.5rem;
       }
     }

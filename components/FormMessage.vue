@@ -108,35 +108,52 @@
   @import "../assets/mixins.scss";
 
   .form-message {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-
-    width: 60.5rem;
-
     position: relative;
 
+    @media #{$desktop} {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      width: 60.5rem;
+    }
 
     &__checkbox {
-      margin-bottom: 4rem;
+      margin-bottom: 2.6rem;
+
+      @media #{$desktop} {
+        margin-bottom: 4rem;
+      }
     }
 
     &__input {
-      margin-right: 1.8rem;
-      margin-bottom: 3.2rem;
+      margin-bottom: 2.2rem;
 
-      width: calc(50% - 1.8rem)
+      width: 100%;
+
+      @media #{$desktop} {
+        margin-right: 1.8rem;
+        width: calc(50% - 1.8rem);
+        margin-bottom: 3.2rem;
+      }
     }
 
     &__textarea {
-      margin-bottom: 3.2rem;
-      margin-right: 1.8rem;
+      margin-bottom: .7rem;
 
-      width: 100%
+      width: 100%;
+
+      @media #{$desktop} {
+        margin-bottom: 3.2rem;
+        margin-right: 1.8rem;
+      }
     }
 
     &__submit {
 
+      @media #{$mobile} {
+        width: 100%;
+      }
     }
   }
 

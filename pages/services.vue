@@ -95,6 +95,10 @@
       right: 0;
       top: 0;
       z-index: 3;
+
+      @media #{$mobile} {
+        position: relative;
+      }
     }
 
     &__services {

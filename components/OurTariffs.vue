@@ -32,6 +32,14 @@
 
   .our-tariffs {
 
+    &__title {
+
+
+      @media #{$mobile} {
+        margin-bottom: 4.2rem;
+      }
+    }
+
     &__documents {
 
     }

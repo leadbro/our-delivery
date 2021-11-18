@@ -42,14 +42,21 @@
   @import "../../assets/mixins";
 
   .documents {
-    display: flex;
-    flex-wrap: wrap;
+
+    @media #{$desktop} {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
     &__item {
-      margin-right: 10rem;
-      margin-bottom: 3.2rem;
+      margin-bottom: 2.4rem;
 
-      width: calc(50% - 10rem);
+      @media #{$desktop} {
+        margin-right: 10rem;
+        margin-bottom: 3.2rem;
+
+        width: calc(50% - 10rem);
+      }
     }
   }
 

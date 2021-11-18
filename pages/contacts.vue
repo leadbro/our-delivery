@@ -61,8 +61,12 @@ export default {
 @import "../assets/mixins.scss";
 
   .page-contacts {
-    margin-top: -2.6rem;
-    padding-bottom: 14rem;
+    padding-bottom: 6.4rem;
+
+    @media #{$desktop} {
+      margin-top: -2.6rem;
+      padding-bottom: 14rem;
+    }
 
     &__banner {
       width: var(--banner-width);
@@ -72,6 +76,10 @@ export default {
       right: 0;
       top: 0;
       z-index: 3;
+
+      @media #{$mobile} {
+        position: relative;
+      }
     }
 
     &__maps {
@@ -82,7 +90,15 @@ export default {
 
       &-title {
         font-family: $bebasNeueBold;
-        font-size: 5.5rem;
+        font-size: 3rem;
+
+        @media #{$mobile} {
+          line-height: 3rem;
+        }
+
+        @media #{$desktop} {
+          font-size: 5.5rem;
+        }
       }
     }
   }
