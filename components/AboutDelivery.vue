@@ -25,14 +25,21 @@
         </div>
       </div>
     </div>
+
+    <div class="about-delivery__container container">
+      <base-title class="about-delivery__thanks-title" sup="Клиенты пишут нам">Благодарственные письма</base-title>
+    </div>
+      <app-thanks-slider />
   </div>
 </template>
 
 <script>
+import AppThanksSlider from '~/components/AppThanksSlider';
+
   export default {
     name: 'AboutDelivery',
     components: {
-
+      AppThanksSlider
     },
     computed: {
       _items() {
@@ -51,11 +58,20 @@
     background-position: center bottom;
 
     padding-top: 5rem;
-    padding-bottom: 62rem;
+    padding-bottom: 23.2rem;
 
     position: relative;
 
+    @media #{$mobile} {
+      background-size: 160%;
+    }
+
+    @media #{$tablet} {
+      padding-bottom: 30rem;
+    }
+
     @media #{$desktop} {
+      background-size: contain;
       padding-top: 9rem;
       padding-bottom: 62rem;
     }
@@ -65,7 +81,17 @@
 
       @media #{$desktop} {
         padding: 0 7rem;
+
+        &:nth-child(2) {
+          padding: 0;
+        }
       }
+    }
+
+    &__thanks-title {
+      margin-top: 5.2rem;
+      margin-bottom: .4rem;
+      max-width: 80%;
     }
 
     &__header {
@@ -75,10 +101,10 @@
         display: flex;
         padding-left: 7.7rem;
         margin-bottom: 10rem;
+        width: 120.0rem;
       }
 
       &-title {
-
 
         @media #{$mobile} {
           margin-left: 6.6rem;
@@ -93,10 +119,8 @@
         line-height: 2.7rem;
 
         @media #{$desktop} {
-          font-size: 1.8rem;
-          line-height: 3rem;
-
-          padding-top: 6rem;
+          padding-left: 8.6rem;
+          padding-top: 3.8rem;
 
           margin-left: auto;
           width: 66.6rem;
@@ -108,6 +132,7 @@
 
       @media #{$desktop} {
         display: flex;
+        padding-left: 80px;
       }
 
       &-picture {
@@ -118,8 +143,9 @@
         }
 
         @media #{$desktop} {
-          width: 52.9rem;
-          height: 46.1rem;
+          flex-shrink: 0;
+          height: 36.8rem;
+          width: 50.2rem;
         }
 
         img {
@@ -132,6 +158,7 @@
 
       &-title {
         font-family: $bebasNeueBold;
+        color: #1A36C8;
         font-size: 2.2rem;
 
         margin-bottom: 1rem;
@@ -153,15 +180,22 @@
         line-height: 2.1rem;
 
         @media #{$desktop} {
-          line-height: 2.4rem;
+          padding-left: 4.0rem;
 
-          margin-left: auto;
-          width: 66.6rem;
+          width: 46.6rem;
         }
 
         :first-child {
           margin-top: 0;
         }
+      }
+    }
+
+    &__thanks-title {
+
+
+      @media #{$desktop} {
+        margin-bottom: 4.0rem;
       }
     }
   }

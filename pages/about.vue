@@ -15,10 +15,10 @@
 </template>
 
 <script>
-  import AboutDelivery from '~/components/AboutDelivery';
+import AboutDelivery from '~/components/AboutDelivery';
 
 export default {
-  name: 'docs',
+  name: 'About',
   transition: 'fade',
   data() {
     return {
@@ -36,7 +36,7 @@ export default {
     }
   },
   components: {
-    AboutDelivery
+    AboutDelivery,
   },
   mounted() {
     /* Скролл к элементу по якорю в URL */
@@ -47,6 +47,7 @@ export default {
   },
   async fetch({store}) {
     await store.dispatch('advantages/getItems');
+    await store.dispatch('thanksSlider/getItems')
   }
 }
 </script>

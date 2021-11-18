@@ -5,6 +5,7 @@
         :src="imageSrc"
         class="base-title__icon"
     />
+    <span v-if="sup" class="base-title__sup">{{ sup }}</span>
     <span class="base-title__text"><slot></slot></span>
   </h2>
 </template>
@@ -16,6 +17,10 @@
       return {};
     },
     props: {
+      sup: {
+        type: String,
+        default: undefined
+      },
       imageSrc: {
         type: String,
         default: ''
@@ -53,6 +58,30 @@
         --icon-size: 34rem;
 
         top: calc(50% - var(--icon-size) / 2);
+      }
+    }
+
+    &__sup {
+      display: block;
+      font-family: $openSans;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      margin-bottom: .6rem;
+
+      @media #{$desktop} {
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+        margin-bottom: 1.4rem;
+      }
+    }
+
+    &__sup + &__text {
+
+
+      @media #{$desktop} {
+        font-size: 6.0rem;
+        line-height: 6.0rem;
       }
     }
 

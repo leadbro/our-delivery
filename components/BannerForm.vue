@@ -35,7 +35,7 @@
   .banner-form {
     padding-top: 9.5rem;
 
-    height: 50rem;
+    height: 35.5rem;
 
     position: relative;
     z-index: 1;
