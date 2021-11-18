@@ -78,7 +78,8 @@
 
 .base-pagination-numbered {
   display: flex;
-
+  padding: 0;
+  margin: 0;
 }
 
 </style>

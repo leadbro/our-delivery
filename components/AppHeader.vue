@@ -33,7 +33,8 @@
         display: flex;
         align-items: flex-start;
 
-        padding-top: 2.8rem;
+        padding-top: 2.4rem;
+        padding-left: 3.0rem;
         margin-bottom: 2.6rem;
 
         height: var(--banner-height);

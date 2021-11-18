@@ -5,4 +5,8 @@
 
   max-width: 144rem;
   width: calc(100vw - 3rem);
+
+  @media #{$desktop} {
+    width: calc(100vw - 10rem);
+  }
 }

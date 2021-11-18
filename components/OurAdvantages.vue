@@ -50,7 +50,7 @@
       list-style: none;
 
       @media #{$desktop} {
-        grid-template-columns: repeat(5, 20%);
+        grid-template-columns: repeat(5, 1fr);
       }
     }
 

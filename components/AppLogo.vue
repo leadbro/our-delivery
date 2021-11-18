@@ -21,8 +21,8 @@
     position: relative;
 
     @media #{$desktop} {
-      font-size: 4rem;
-      line-height: 4.024rem;
+      font-size: 3rem;
+      line-height: 3.054rem;
     }
 
     &__link {
@@ -44,8 +44,8 @@
       width: 4rem;
 
       @media #{$desktop} {
-        height: 10.1rem;
-        width: 8.9rem;
+        height: 6.8rem;
+        width: 6.8rem;
       }
     }
 
@@ -56,7 +56,7 @@
       width: 8.0rem;
 
       @media #{$desktop} {
-        padding: 0 1.7rem;
+        padding: 0 1.2rem;
       }
     }
   }

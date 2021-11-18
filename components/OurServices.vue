@@ -99,7 +99,7 @@
     }
 
     &__layer-top {
-      height: 206vw;
+      height: 216vw;
       position: relative;
       z-index: 2;
 

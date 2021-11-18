@@ -138,7 +138,7 @@
       z-index: 3;
 
       @media #{$desktop} {
-        --button-size: 6.7rem;
+        --button-size: 5.0rem;
 
         left: calc(var(--button-size) * -1);
       }

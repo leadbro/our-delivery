@@ -71,6 +71,8 @@
   .app-banner {
 
     &__picture {
+      background-color: black;
+
       height: 100%;
 
       position: relative;
@@ -105,14 +107,20 @@
       position: absolute;
       top: 3.4rem;
       left: var(--side-padding);
+      right: var(--side-padding);
       z-index: 2;
 
       @media #{$desktop} {
-        max-width: calc(100% - 15rem);
-        width: 85rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
 
-        top: 21.1rem;
-        left: 11.1rem;
+        height: 22.0rem;
+        max-width: calc(100% - 15rem);
+        width: 75rem;
+
+        top: 10.6rem;
+        left: 18.1rem;
       }
     }
 
@@ -122,11 +130,12 @@
       line-height: 120%;
       text-transform: uppercase;
       margin: 0;
-      width: 25.5rem;
+      // width: 25.5rem;
 
       @media #{$desktop} {
         font-size: 6rem;
-        line-height: 7.5rem;
+        line-height: 120%;
+        margin-bottom: 1.4rem;
       }
     }
 
@@ -149,8 +158,10 @@
       width: 20.7rem;
 
       @media #{$desktop} {
-        font-size: 1.6rem;
-        line-height: 2.6rem;
+        font-size: 2.4rem;
+        line-height: 3.1rem;
+        height: 6.2rem;
+        width: 75%;
       }
     }
   }

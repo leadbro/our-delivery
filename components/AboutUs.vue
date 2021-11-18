@@ -83,6 +83,11 @@
 
     &__col-title {
       padding-left: 5.6rem;
+
+      @media #{$desktop} {
+        padding-left: 0;
+        padding-right: 3rem;
+      }
     }
 
     &__title {

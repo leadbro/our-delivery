@@ -54,10 +54,11 @@ module.exports = {
     // }
     postcss: {
       plugins: {
-        'postcss-css-variables': false
+        'postcss-css-variables': false,
+        'postcss-responsive-type': {}
       }
     },
-    extractCSS: true
+    //extractCSS: true
   },
   buildModules: [
     '@nuxt/postcss8'
@@ -67,6 +68,13 @@ module.exports = {
   },
   target: 'static',
   ssr: false,
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
   loadingIndicator: {
       name: 'pulse',
   },

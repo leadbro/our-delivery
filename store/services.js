@@ -8,7 +8,7 @@ export const getters = {
     return state.list
   },
   sliderItems(state) {
-    return state.list.filter(i => i.isOnSlider)
+    return state.list.filter(i => i.isOnSlider).slice(0,4)
   },
   provideItems(state) {
     return state.list.filter(i => i.type === 'Предоставляем')
@@ -23,7 +23,6 @@ export const getters = {
 
 export const mutations = {
   setList(state, payload) {
-    console.log(payload);
     state.list = payload.map(i => {
       return {
         id: i.id,

@@ -102,7 +102,7 @@
       margin-top: .5rem;
       margin-bottom: 2.4rem;
 
-      @media (--desktop) {
+      @media #{$desktop} {
         margin-top: 0;
         margin-bottom: 0;
 
@@ -116,7 +116,7 @@
       margin-bottom: 2.0rem;
       width: 100%;
 
-      @media (--desktop) {
+      @media #{$desktop} {
         margin-right: 1.8rem;
         width: 29.3rem;
       }

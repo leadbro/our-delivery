@@ -34,7 +34,7 @@
 
     @media #{$desktop} {
       --banner-width: calc((1411 / 1903) * 100%);
-      --banner-height: 57.7rem;
+      --banner-height: 43.6rem;
       --side-padding: 0;
     }
   }
@@ -47,11 +47,20 @@
 
   html {
     background-color: #081305;
-    font-size: 10px;
     position: relative;
 
+    font-size: responsive;
+    min-font-size: 10px;
+    max-font-size: 20px;
+    lower-font-range: 320px;
+    upper-font-range: 768px;
+
     @media #{$tablet} {
-      font-size: 20px !important;
+      font-size: 20px;
+    }
+
+    @media #{$desktop} {
+      font-size: 10px;
     }
   }
 

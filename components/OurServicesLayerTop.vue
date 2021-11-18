@@ -80,7 +80,7 @@
       color: #fff;
       padding-top: 2rem;
       padding-left: 2.5rem;
-      padding-right: .5rem;
+      padding-right: 2.5rem;
       padding-bottom: 4rem;
 
       @media #{$desktop} {
@@ -125,13 +125,16 @@
     &__controls {
       display: flex;
       align-items: center;
+      justify-content: space-between;
 
       position: absolute;
-      left: 25px;
+      left: 2.5rem;
+      right: 2.5rem;
       bottom: 97vw;
 
       @media #{$desktop} {
         left: 0;
+        right: auto;
         bottom: 14rem;
       }
 
@@ -146,12 +149,13 @@
           text-decoration: none;
           border-bottom: 2px solid white;
           padding-bottom: 0px;
-          margin-bottom: -6px;
+          margin-bottom: -.6rem;
         }
 
         @media #{$desktop} {
           font-size: 3.6rem;
           line-height: 6rem;
+          margin-right: 5.0rem;
         }
       }
     }

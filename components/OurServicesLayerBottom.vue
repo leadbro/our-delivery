@@ -55,7 +55,7 @@
     }
 
     &__square {
-      height: 111vw;
+      height: 125vw;
 
       transition: background-color .4s ease-out;
 

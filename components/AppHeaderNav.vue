@@ -43,7 +43,7 @@
     color: #000;
 
     font-family: $bebasNeue;
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
 
@@ -52,7 +52,7 @@
     }
 
     &__list {
-      padding: 5.2rem 0 0 10.8rem;
+      padding: 4.2rem 0 0 8rem;
       margin: 0;
       list-style: none;
 
@@ -64,7 +64,7 @@
     &__item {
 
       & + & {
-        margin-top: 2.8rem;
+        margin-top: 2.9rem;
       }
     }
 

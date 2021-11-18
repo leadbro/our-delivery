@@ -27,13 +27,11 @@ export default {
       currentPercent: 0,
       startTime: 0,
       animationId: 0,
-      size: 19
+      size: 19,
+      progressRadius: 10
     };
   },
   computed: {
-    progressRadius() {
-      return (this.size)/2 * 10;
-    },
     duration() {
       return this.speed
     },
@@ -45,18 +43,25 @@ export default {
   },
   methods: {
     init() {
-      const styles = getComputedStyle(this.$el)
-      const tabletSize = parseFloat(styles.getPropertyValue('--pagination-item-tablet-size'));
-
-      if (tabletSize) {
-        this.size = tabletSize
-      } else {
-        this.size = parseFloat(styles.getPropertyValue('--pagination-item-size'));
-      }
+      this.calculateSize()
 
       if (this.isCurrent) {
         this.start();
       }
+    },
+    calculateAll() {
+      this.calculateSize()
+      this.calculateRadius()
+    },
+    calculateSize() {
+      const styles = getComputedStyle(this.$el)
+      this.size = parseFloat(styles.getPropertyValue('--pagination-item-size'));
+    },
+    calculateRadius() {
+      const html = document.querySelector('html')
+      const size = parseFloat(getComputedStyle(html).fontSize)
+
+      this.progressRadius = (this.size)/2 * size;
     },
     start() {
       this.$refs.progress.start();
@@ -74,10 +79,17 @@ export default {
       type: Number,
       default: 6000
     },
-
+  },
+  created() {
+    window.addEventListener('resize', this.calculateAll)
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.calculateAll)
   },
   mounted() {
     this.init()
+
+    this.calculateRadius()
   },
   components: {
     BasePaginationNumberedItemProgress
@@ -108,11 +120,6 @@ export default {
   height: var(--pagination-item-size);
 
   position: relative;
-
-  @media #{$tablet} {
-    // Увеличиваем в 2 раза для планшета
-    --pagination-item-tablet-size: 5.6rem;
-  }
 
   @media #{$desktop} {
     --pagination-item-size: 3.8rem;
