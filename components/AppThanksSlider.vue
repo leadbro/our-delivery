@@ -11,7 +11,7 @@
         v-for="item in _items"
         :key="item.id"
       >
-        <picture class="thanks-slider__picture">
+        <picture class="thanks-slider__picture" @click="onClick(item.image)">
           <img :src="item.image" :alt="item.title" />
         </picture>
       </swiper-slide>
@@ -61,6 +61,9 @@
       goPrev() {
         this.swiper.slidePrev()
       },
+      onClick(image) {
+        this.$modal.show('sert-modal', { image })
+      }
     }
   }
 </script>
@@ -110,9 +113,18 @@
 
       width: 17.6rem;
 
+      transition: .2s ease;
+
       position: relative;
       overflow: hidden;
       z-index: 1;
+
+      &:hover {
+        cursor: pointer;
+        filter:
+          drop-shadow(0px .8rem 4.0rem rgba(0, 0, 0, 0.15))
+          drop-shadow(0px .1rem 1.1rem rgba(0, 0, 0, 0.05));
+      }
 
       img {
         object-fit: cover;

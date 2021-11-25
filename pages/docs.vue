@@ -16,10 +16,12 @@
 
 <script>
   import OurDocuments from '~/components/OurDocuments'
+  import ScrollToHash from '~/mixins/ScrollToHash.js'
 
 export default {
   name: 'docs',
   transition: 'fade',
+  mixins: [ ScrollToHash ],
   data() {
     return {
       title: 'Документы',
@@ -38,13 +40,7 @@ export default {
   components: {
     OurDocuments
   },
-  mounted() {
-    /* Скролл к элементу по якорю в URL */
-    let hash = this.$route.hash;
-    if (hash) {
-      this.$scrollTo(hash, 1500);
-    }
-  },
+  mixins: [ ScrollToHash ],
   async fetch({store}) {
     await store.dispatch('documents/getItems');
   }
@@ -68,6 +64,10 @@ export default {
       right: 0;
       top: 0;
       z-index: 3;
+
+      @media #{$mobile} {
+        position: relative;
+      }
     }
   }
 

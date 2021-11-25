@@ -30,8 +30,7 @@
 
 <script>
   import {mapGetters} from 'vuex';
-
-  // import VueScrollTo from 'vue-scrollto';
+  import ScrollToHash from '~/mixins/ScrollToHash.js'
 
   import Services from '~/components/Services'
 
@@ -53,6 +52,7 @@
         title: this.title
       }
     },
+    mixins: [ ScrollToHash ],
     components: {
       Services
     },
@@ -61,14 +61,6 @@
         provideItems: 'services/provideItems',
         deliverItems: 'services/deliverItems',
       })
-    },
-
-    mounted() {
-      /* Скролл к элементу по якорю в URL */
-      let hash = this.$route.hash;
-      if (hash) {
-        this.$scrollTo(hash, 1500);
-      }
     },
     async fetch({store}) {
       await store.dispatch('advantages/getItems');

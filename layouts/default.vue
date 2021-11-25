@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <app-mobile-menu />
-    <app-header/>
+    <app-header ref="header"/>
     <nuxt/>
     <app-footer/>
     <privacy-policy-modal/>
+    <sert-modal/>
   </div>
 </template>
 
@@ -16,6 +17,27 @@
   import AppMobileMenu from "~/components/AppMobileMenu"
   import AppFooter from "~/components/AppFooter"
   import PrivacyPolicyModal from "~/components/PrivacyPolicyModal"
+  import SertModal from "~/components/SertModal"
+
+  class TempScrollBox {
+    constructor() {
+      this.scrollBarWidth = 0;
+
+      this.measureScrollbarWidth();
+    }
+
+    measureScrollbarWidth() {
+      let scrollbox = document.createElement('div');
+      scrollbox.style.overflow = 'scroll';
+      document.body.appendChild(scrollbox);
+      this.scrollBarWidth = scrollbox.offsetWidth - scrollbox.clientWidth;
+      document.body.removeChild(scrollbox);
+    }
+
+    get width() {
+      return this.scrollBarWidth;
+    }
+  }
 
   export default {
     components: {
@@ -23,6 +45,12 @@
       AppMobileMenu,
       AppFooter,
       PrivacyPolicyModal,
+      SertModal,
+    },
+    mounted() {
+      const scrollbox = new TempScrollBox()
+      const scrollBarWidth = scrollbox.width - 1 + 'px'
+      document.body.style.setProperty('--scrollbar-width', scrollBarWidth)
     }
   }
 </script>
@@ -72,6 +100,10 @@
     font-family: $openSans;
     font-size: 1.6rem;
     width: 100%;
+  }
+
+  body.vm--block-scroll {
+    width: calc(100vw - var(--scrollbar-width))
   }
 
   #app {

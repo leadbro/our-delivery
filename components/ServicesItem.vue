@@ -216,7 +216,7 @@
         content: '';
         display: block;
 
-        background-image: url('/images/icons/arrow.svg');
+        background-image: url('~/assets/images/icons/arrow.svg');
         background-repeat: no-repeat;
         background-size: contain;
 

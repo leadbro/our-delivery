@@ -19,10 +19,12 @@
 <script>
   import OurTariffs from '~/components/OurTariffs';
   import Warehousing from '~/components/Warehousing';
+  import ScrollToHash from '~/mixins/ScrollToHash.js'
 
   export default {
     name: 'docs',
     transition: 'fade',
+    mixins: [ ScrollToHash ],
     data() {
       return {
         title: 'Тарифы и сроки',
@@ -41,13 +43,6 @@
     components: {
       OurTariffs,
       Warehousing
-    },
-    mounted() {
-      /* Скролл к элементу по якорю в URL */
-      let hash = this.$route.hash;
-      if (hash) {
-        this.$scrollTo(hash, 1500);
-      }
     },
     async fetch({store}) {
       await store.dispatch('tariffs/getItems');

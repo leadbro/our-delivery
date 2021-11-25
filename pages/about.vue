@@ -16,10 +16,12 @@
 
 <script>
 import AboutDelivery from '~/components/AboutDelivery';
+import ScrollToHash from '~/mixins/ScrollToHash.js'
 
 export default {
   name: 'About',
   transition: 'fade',
+  mixins: [ ScrollToHash ],
   data() {
     return {
       title: 'О нас',
@@ -37,13 +39,6 @@ export default {
   },
   components: {
     AboutDelivery,
-  },
-  mounted() {
-    /* Скролл к элементу по якорю в URL */
-    let hash = this.$route.hash;
-    if (hash) {
-      this.$scrollTo(hash, 1500);
-    }
   },
   async fetch({store}) {
     await store.dispatch('advantages/getItems');

@@ -21,10 +21,12 @@
 <script>
 import ContactsMaps from '~/components/ContactsMaps'
 import FormMessage from '~/components/FormMessage'
+import ScrollToHash from '~/mixins/ScrollToHash.js'
 
 export default {
   name: 'docs',
   transition: 'fade',
+  mixins: [ ScrollToHash ],
   data() {
     return {
       title: 'Контакты',
@@ -43,13 +45,6 @@ export default {
   components: {
     ContactsMaps,
     FormMessage
-  },
-  mounted() {
-    /* Скролл к элементу по якорю в URL */
-    let hash = this.$route.hash;
-    if (hash) {
-      this.$scrollTo(hash, 1500);
-    }
   },
   async fetch({store}) {
     await store.dispatch('advantages/getItems');

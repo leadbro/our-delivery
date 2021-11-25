@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'перевозки по россии быстро и надежно' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+      { rel: 'icon', type: 'image/png', href: './favicon.png' },
     ]
   },
   css: [

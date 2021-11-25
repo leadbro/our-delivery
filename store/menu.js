@@ -20,14 +20,10 @@ export const getters = {
 
 export const mutations = {
   openMenu(state) {
-    console.log(state.isMenuOpen)
     state.isMenuOpen = true
-    console.log(state.isMenuOpen)
   },
 
   closeMenu(state) {
-    console.log(state.isMenuOpen)
     state.isMenuOpen = false
-    console.log(state.isMenuOpen)
   }
 }

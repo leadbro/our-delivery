@@ -18,9 +18,11 @@
   import OurServices from '~/components/OurServices';
   import MainForm from '~/components/MainForm';
   import AppHeaderSlider from '~/components/AppHeaderSlider';
+  import ScrollToHash from '~/mixins/ScrollToHash.js'
 
   export default {
     transition: 'fade',
+    mixins: [ ScrollToHash ],
     components: {
       AboutUs,
       MainForm,

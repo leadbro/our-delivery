@@ -53,7 +53,7 @@ import AppThanksSlider from '~/components/AppThanksSlider';
   @import "../assets/mixins.scss";
 
   .about-delivery {
-    background-image: url('/images/about/bg-desktop.jpg');
+    background-image: url('~/assets/images/about/bg-desktop.jpg');
     background-repeat: no-repeat;
     background-position: center bottom;
 
