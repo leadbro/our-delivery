@@ -98,7 +98,7 @@
 
         position: absolute;
         top: 1.25rem;
-        left: 0.25rem;
+        left: 0.3rem;
 
         transform-origin: 50%;
         transform: rotateZ(45deg);

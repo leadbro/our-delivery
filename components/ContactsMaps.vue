@@ -9,7 +9,7 @@
         <p>115201, 1-ый Котляковский переулок, д.12, помещение 1, комнаты 1,17,18.</p>
 
         <h4>Склад:</h4>
-        <p>Москва, Фряновское шоссе 52.</p>
+        <p>Москва, ул. Никопольская, дом&nbsp;6&nbsp;строение&nbsp;2</p>
 
         <h4>Телефон:</h4>
         <p><a href="tel:+74951367399">+7 (495) 136-73-99</a></p>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="contacts-maps__map" style="width: 918px; height: 783px">
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A281b38c9af79d5b296ef34d5814250d8e99b8d334faaf9fc4a23ea05c392e987&amp;width=918&amp&amp;lang=ru_RU&amp;scroll=true"></script>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2b36ab284ea14ee00dd3b10fc337ee6d87c44c61e105d89aa0f0346a1c958b22&amp;width=918&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
     <div class="contacts-maps__item">
