@@ -19,12 +19,12 @@
 
       </div>
 
-      <div class="contacts-maps__map" style="width: 918px; height: 783px">
+      <div class="contacts-maps__map" style="width: 91.8rem; height: 78.3rem">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2b36ab284ea14ee00dd3b10fc337ee6d87c44c61e105d89aa0f0346a1c958b22&amp;width=918&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
     </div>
     <div class="contacts-maps__item">
-      <div class="contacts-maps__map" style="width: 783px;  height: 702px">
+      <div class="contacts-maps__map" style="width: 78.3rem;  height: 70.2rem">
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adb624cc4442a1dca38f7732a4f575ed14503ba67b8dd4a9ca4819a7a5fc4686e&amp;width=783&amp&amp;lang=ru_RU&amp;scroll=true"></script>
       </div>
 
@@ -107,7 +107,7 @@
       @media #{$mobile} {
         padding-left: var(--side-padding);
         padding-right: var(--side-padding);
-        padding-top: 68px;
+        padding-top: 6.8rem;
       }
 
       @media #{$desktop} {

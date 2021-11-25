@@ -8,7 +8,7 @@ export const getters = {
     return state.list
   },
   sliderItems(state) {
-    return state.list.filter(i => i.isOnSlider).slice(0,4)
+    return state.list.filter(i => i.isOnSlider)
   },
   provideItems(state) {
     return state.list.filter(i => i.type === 'Предоставляем')

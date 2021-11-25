@@ -4,7 +4,9 @@
       <div class="our-services-layer-top__content">
           <base-title class="our-services-layer-top__title">{{ _item.title }}</base-title>
           <div class="our-services-layer-top__text">{{ _item.previewText }}</div>
-          <base-button-2  class="our-services-layer-top__button"><nuxt-link to="/services#services">Подробнее</nuxt-link></base-button-2>
+          <base-button-2  class="our-services-layer-top__button">
+            <nuxt-link :to="`/services#service-${_item.id}`">Подробнее</nuxt-link>
+          </base-button-2>
       </div>
       <div class="our-services-layer-top__controls">
         <nuxt-link class="our-services-layer-top__controls-title" to="/services#services">Наши услуги</nuxt-link>
@@ -106,12 +108,12 @@
       line-height: 2.1rem;
       font-weight: 600;
 
-      margin-bottom: 17px;
+      margin-bottom: 1.7rem;
 
       max-width: 100%;
 
       @media #{$mobile} {
-        margin-top: 7px;
+        margin-top: .7rem;
       }
 
       @media #{$desktop} {
@@ -119,6 +121,13 @@
         line-height: 2.6rem;
         margin-bottom: 5.4rem;
         max-width: 80%;
+      }
+    }
+
+    &__pagination {
+      @media #{$mobile} {
+        position: relative;
+        right: -2.0rem;
       }
     }
 
@@ -147,8 +156,8 @@
 
         @media #{$mobile} {
           text-decoration: none;
-          border-bottom: 2px solid white;
-          padding-bottom: 0px;
+          border-bottom: .2rem solid white;
+          padding-bottom: 0;
           margin-bottom: -.6rem;
         }
 

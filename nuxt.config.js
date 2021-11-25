@@ -52,6 +52,7 @@ module.exports = {
     //     })
     //   }
     // }
+    //analyze: true,
     postcss: {
       plugins: {
         'postcss-css-variables': false,
@@ -76,7 +77,7 @@ module.exports = {
     }
   },
   loadingIndicator: {
-      name: 'pulse',
+    name: 'pulse',
   },
   axios: {
     baseURL: 'https://api.xn--80aaaajk8bsm4al1e.xn--p1ai/wp-json/wp/v2/'

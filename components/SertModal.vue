@@ -47,7 +47,7 @@
     padding-bottom: 2rem;
 
     .vm--modal {
-      border-radius: 12px;
+      border-radius: 1.2rem;
       overflow: hidden;
     }
 
@@ -70,7 +70,7 @@
       cursor: pointer;
       outline: none;
 
-      border: 2px solid #0101FE;
+      border: .2rem solid #0101FE;
 
       height: 3rem;
       width: 3rem;

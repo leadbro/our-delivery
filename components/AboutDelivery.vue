@@ -132,14 +132,14 @@ import AppThanksSlider from '~/components/AppThanksSlider';
 
       @media #{$desktop} {
         display: flex;
-        padding-left: 80px;
+        padding-left: 8.0rem;
       }
 
       &-picture {
         width: 100%;
 
         @media #{$mobile} {
-          margin-bottom: 55px;
+          margin-bottom: 5.5rem;
         }
 
         @media #{$desktop} {

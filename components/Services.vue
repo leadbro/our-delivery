@@ -3,6 +3,7 @@
     <services-item
       class="services__item"
       v-for="item in _items"
+      :id="item.id"
       :key="item.id"
       :title="item.servicesTitle"
       :preview-text="item.previewText"

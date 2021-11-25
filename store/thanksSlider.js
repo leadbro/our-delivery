@@ -25,7 +25,7 @@ export const mutations = {
 
 export const actions = {
   async getItems({ state, commit }) {
-    let response = await this.$axios.$get('/posts/', {params: {categories: 9}});
+    let response = await this.$axios.$get('/posts/', {params: {categories: 9, per_page: 50}});
     commit('setListFromApi', response);
   }
 };

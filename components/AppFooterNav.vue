@@ -56,7 +56,7 @@
       & + & {
 
         @media #{$mobile} {
-          margin-top: 20px;
+          margin-top: 2.0rem;
         }
 
         @media #{$desktop} {

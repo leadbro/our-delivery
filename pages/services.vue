@@ -35,15 +35,16 @@
   import Services from '~/components/Services'
 
   export default {
-    name: 'docs',
+    name: 'services-page',
     transition: 'fade',
     data() {
       return {
+        scrollToOffset: -50,
         title: 'Услуги',
         subtitle: '',
         text: '',
         pictures: {
-          mobile: '/images/banners/services.jpg?v=1'
+          mobile: '/images/banners/services.jpg?v=2'
         }
       }
     },

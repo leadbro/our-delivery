@@ -1,5 +1,5 @@
 <template>
-  <article class="services-item">
+  <article class="services-item" :id="serviceId">
     <img
       :src="iconSrc"
       :alt="title"
@@ -41,6 +41,9 @@
     computed: {
       readmoreText() {
         return this.isExpanded ? 'Свернуть' : 'Читать больше'
+      },
+      serviceId() {
+        return 'service-' + this.id
       }
     },
     methods: {
@@ -51,7 +54,18 @@
         this.$scrollTo('#banner-form');
       }
     },
+    mounted() {
+      const hash = this.$route?.hash
+
+      if (hash && hash.slice(1) === this.serviceId) {
+        this.isExpanded = true
+      }
+    },
     props: {
+      id: {
+        type: Number,
+        required: true
+      },
       title: {
         type: String,
         default: ''
@@ -113,14 +127,14 @@
 
       overflow: hidden;
 
-      transition: opacity 1s, max-height 1s;
+      transition: opacity 1s, max-height .8s;
 
 
       &[aria-expanded="true"] {
         max-height: 100rem;
         opacity: 1;
 
-        transition: opacity 1s, max-height 2s;
+        transition: opacity 1s, max-height 1.5s;
       }
     }
 
@@ -182,7 +196,6 @@
 
     &__button {
       margin-top: 3rem;
-      margin-bottom: 2rem;
 
       @media #{$mobile} {
         width: 100%;
@@ -200,6 +213,7 @@
       font-size: 1.4rem;
       outline: none;
 
+      margin-top: 2rem;
       padding: 0;
 
       position: relative;
