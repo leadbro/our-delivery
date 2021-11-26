@@ -58,7 +58,7 @@
     methods: {
       async onFormSubmit() {
         let response = await this.$axios({
-          baseURL: 'http://xn--80aaaajk8bsm4al1e.xn--p1ai/',
+          baseURL: 'https://xn--80aaaajk8bsm4al1e.xn--p1ai/',
           url: 'form-handler.php',
           method: 'post',
           params: this.formData
