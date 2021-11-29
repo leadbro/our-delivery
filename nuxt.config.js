@@ -64,9 +64,6 @@ module.exports = {
   buildModules: [
     '@nuxt/postcss8'
   ],
-  router: {
-    base: '/'
-  },
   target: 'static',
   ssr: false,
   render: {
