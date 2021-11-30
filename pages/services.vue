@@ -76,6 +76,13 @@
 
   .page-services {
 
+    &__title {
+
+      @media #{$desktop} {
+        margin-top: 7.0rem;
+      }
+    }
+
     &__documents {
       margin-bottom: 8rem;
     }

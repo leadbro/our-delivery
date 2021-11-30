@@ -64,7 +64,7 @@
 
       @media #{$desktop} {
         padding-left: calc(100vw - var(--banner-width));
-        margin-bottom: 12rem;
+        margin-bottom: 19rem;
       }
     }
 

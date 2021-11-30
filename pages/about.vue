@@ -28,7 +28,7 @@ export default {
       subtitle: '',
       text: '',
       pictures: {
-        mobile: '/images/banners/about.jpg?v=1'
+        mobile: '/images/banners/about.jpg?v=3'
       }
     }
   },
